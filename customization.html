@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>IKEH</title>
-  <link rel="stylesheet" href="customization.css">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="css/customization.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/popup.css">
   <style>
     main {
       width: 80%;
@@ -39,6 +39,10 @@
 
     .color-box:hover {
       border: 5px solid black;
+    }
+
+    .color-chosen {
+      border: 3px solid black;
     }
 
     #bottom-input {
@@ -122,7 +126,7 @@
 
     <div id="color-picker-container">
       <h3>PICK YOUR FAVOURITE COLOR</h3>
-      <div id="color-picker">
+      <div id="color-picker" data-value="0">
         <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
         <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
         <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
@@ -135,37 +139,82 @@
     <div>
       <div id="bottom-input">
         <div>
-          <label for="amount">Jumlah Barang</label>
-          <input id="amount" name="amount" type="number" value="1" min="1">
+          <label for="quantity">Jumlah Barang</label>
+          <input id="quantity" name="quantity" type="number" value="1" min="1">
         </div>
         <div>
           <span>Rp2.500.000</span>
         </div>
         <div>
-          <button>Order</button>
+          <button onclick="order()">Order</button>
         </div>
       </div>
     </div>
+    <div style="padding: 75px 0;">
+      <h1>Current Orders</h1>
+      <div id="current-orders" style="font-size: 25px; padding: 30px 0;"></div>
+      <button onclick="clearOrders()">Clear Orders</button>
+    </div>
   </main>
 
+  <script src="js/color-picker.js"></script>
   <script>
-    let chosenColor = 0;
+    function order() {
+      const orders = getCurrentOrders();
 
-    function chooseColor(colorNumber) {
-      if (colorNumber == chosenColor) {
-        return;
+      orders.push({
+        width: getNumberInput('lebar'),
+        height: getNumberInput('tinggi'),
+        wood: 1,
+        color: getChosenColor(),
+        quantity: getNumberInput('quantity')
+      });
+
+      saveOrders(orders);
+
+      displayCurrentOrders();
+    }
+
+    function getCurrentOrders() {
+      let orders = JSON.parse(window.localStorage.getItem('orders'));
+
+      if (!orders) {
+        orders = [];
       }
 
-      const chosenColorBox = document.getElementById(`color-${colorNumber}`);
+      return orders;
+    }
 
-      chosenColorBox.classList.add('color-chosen');
+    function saveOrders(orders) {
+      window.localStorage.setItem('orders', JSON.stringify(orders));
+    }
 
-      if (chosenColor > 0) {
-        const previousColorBox = document.getElementById(`color-${chosenColor}`);
-        previousColorBox.classList.remove('color-chosen');
+    function displayCurrentOrders() {
+      const orders = getCurrentOrders();
+
+      console.log(orders);
+
+      const currentOrdersDiv = document.getElementById('current-orders');
+
+      currentOrdersDiv.innerHTML = '';
+
+      for (let i = 0; i < orders.length; i++) {
+        const div = document.createElement('div');
+
+        div.innerHTML = JSON.stringify(orders[i]);
+
+        currentOrdersDiv.appendChild(div);
       }
+    }
 
-      chosenColor = colorNumber;
+    function getNumberInput(id) {
+      return Number(document.getElementById(id).value);
+    }
+
+    function clearOrders() {
+      window.localStorage.clear();
+
+      displayCurrentOrders();
     }
   </script>
 </body>
