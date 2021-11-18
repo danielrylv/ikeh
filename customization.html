@@ -79,26 +79,28 @@
         <p> <span class="fontBig">Kursi</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a voluptatem reprehenderit possimus eveniet non eos. 
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium numquam 
         </p>
+
       </div>
 
       <div class="containerKanan">
         <div class = "isiContainerKanan">
           <form>
-            <h3>Input Size</h3>
-            <label for="lebar">Width</label>
+            <h3 style="font-style: italic;">INPUT SIZE</h3>
+            <label for="lebar"> <span style="font-style: italic; font-weight: bold;" >Width (cm)</span></label>
             <br>
             <input type="number" id="lebar">
             <br>
-            <label for="tinggi">Height</label>
+            <label for="tinggi"><span style="font-style: italic; font-weight: bold;">Height (cm)</span></label>
             <br>
             <input type="number" id="tinggi">
             <br>
-            <label for="panjang">Length</label>
+            <label for="panjang"><span style="font-style: italic; font-weight: bold;">Length (cm)</span></label>
             <br>
             <input type="number" id="panjang">
             <br>
             <br>
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-button">Submit</button>
+
           </div>
         </form>
       </div>
@@ -119,7 +121,7 @@
   
 
     <div id="color-picker-container">
-      <h3>PICK YOUR FAVOURITE COLOR</h3>
+      <h3 style="font-style: italic;">PICK YOUR FAVOURITE COLOR</h3>
       <div id="color-picker">
         <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
         <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>

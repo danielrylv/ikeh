@@ -70,29 +70,43 @@
   font-weight: bold;
 }  
 
-
-
 .button {
   cursor: pointer;
   border: 0px;
-  
-  
+  transition-duration: 0.4s;
 }
 
 .button:hover {
   border: 5px solid lightgrey;
-  
 }
+
+.submit-button {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+.submit-button:hover {
+  background-color: rgb(89, 42, 165);
+}
+
 .button + .button {
   margin-left: 100px;
 }
 
 .content {
   background: white;
-  width: 100%;
+  
   padding: 1em;
   text-align: center;
-  justify-content: center
+  
+  display: flex;
+  justify-content: center;
+  
 }
 
 .title {
