@@ -198,6 +198,7 @@
     </article>
 
   </main>
+  <script src="js/common.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type');
@@ -207,8 +208,9 @@
       bed: 'kasur'
     };
 
-    const body = document.getElementsByTagName('body')[0];
-    body.innerHTML = body.innerHTML.replaceAll('{{type}}', titleByType[type]);
-</script>
+    renderTemplates({
+      type: titleByType[type]
+    });
+  </script>
 </body>
 </html>
