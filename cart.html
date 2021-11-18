@@ -83,7 +83,7 @@
   </div>
   <main>
     <div id="orders-list">
-      <div class="order-item">
+      <div id="tmp-order" class="order-item">
         <h2>Kursi Duar</h2>
         <div class="item-body">
           <div>
@@ -93,25 +93,25 @@
             <div class="row-1">
               <div>
                 <div>Panjang</div>
-                <div>100</div>
+                <div id="tmp-width">100</div>
               </div>  
               <div>
                 <div>Lebar</div>
-                <div>75</div>
+                <div id="tmp-length">75</div>
               </div>  
               <div>
                 <div>Tinggi</div>
-                <div>55</div>
-              </div>  
+                <div id="tmp-height">55</div>
+              </div>
             </div>
             <div class="row-2">
-              <div><img class="material" src="assets/material-jati.jpg"></div>
-              <div class="color-box" style="background-color: lawngreen"></div>
+              <div><img id="tmp-material" class="material" src="assets/material-jati.jpg"></div>
+              <div id="tmp-color" class="color-box" style="background-color: lawngreen"></div>
             </div>
             <div class="row-3">
-              <div>Jumlah: 11</div>  
-              <div>Harga: Rp2.000.000</div>
-              <button onclick="initiateOrderDeletion(-1)">Hapus</button>
+              <div>Jumlah: <span id="tmp-quantity">11</span></div>  
+              <div id="tmp-price">Harga: Rp2.000.000</div>
+              <button id="tmp-delete" onclick="initiateOrderDeletion(-1)">Hapus</button>
             </div>
           </div>
         </div>
@@ -119,6 +119,60 @@
     </div>
   </main>
   <script src="js/order.js"></script>
+  <script>
+    let deleteOrderIndex = -1;
+
+    function initiateOrderDeletion(index) {
+      document.getElementById('order-popup').classList.remove('hide');
+      deleteOrderIndex = index;
+    }
+
+    function handleDeletePopupClick() {
+      document.getElementById('order-popup').classList.add('hide');
+      deleteOrder(deleteOrderIndex);
+    }
+  </script>
+  <script>
+    let orderItemTemplate = null;
+
+    initiateOrderItemFactory();
+
+    function initiateOrderItemFactory() {
+      orderItemTemplate = document.getElementById('tmp-order');
+    }
+
+    function createOrderItemElement(index, order) {
+      const newElement = orderItemTemplate.cloneNode(true);
+      const widthElement = newElement.querySelector('#tmp-width');
+      const heightElement = newElement.querySelector('#tmp-height');
+      const lengthElement = newElement.querySelector('#tmp-length');
+      const materialElement = newElement.querySelector('#tmp-material');
+      const colorElement = newElement.querySelector('#tmp-color');
+      const quantityElement = newElement.querySelector('#tmp-quantity');
+      const priceElement = newElement.querySelector('#tmp-price');
+      const deleteElement = newElement.querySelector('#tmp-delete');
+
+      newElement.id = `order-${index}`;
+      widthElement.innerHTML = order.width;
+      heightElement.innerHTML = order.height;
+      lengthElement.innerHTML = order.length;
+      materialElement.src = `assets/material-${order.material}.jpg`;
+      colorElement.style = { 'background-color': order.color };
+      quantityElement.innerHTML = order.quantity;
+      priceElement.innerHTML = formatPrice(order.price);
+      deleteElement.onclick = () => initiateOrderDeletion(index);
+
+      delete widthElement.id;
+      delete lengthElement.id;
+      delete materialElement.id;
+      delete colorElement.id;
+      delete quantityElement.id;
+      delete priceElement.id;
+      delete deleteElement.id;
+
+      return newElement;
+    }
+  </script>
   <script>
     renderOrderList();
 
@@ -133,23 +187,7 @@
       container.innerHTML = '';
 
       for (let i = 0; i < orders.length; i++) {
-        const wrapper = document.createElement('div');
-
-        wrapper.id = `order-${i}`;
-        wrapper.innerHTML = `
-          <div>Furnitur: Kursi</div>
-          <div>Model: 3</div>
-          <img src="assets/${orders[i].type}-${orders[i].model}.jpg">
-          <div>Panjang: ${orders[i].width}</div>  
-          <div>Tinggi: ${orders[i].height}</div>  
-          <div>Kayu: ${orders[i].wood}</div>
-          <div>Jumlah: ${orders[i].quantity}</div>  
-          <div>Harga: ${formatPrice(orders[i].price)}</div>
-          <div class="color-box" style="background-color: ${orders[i].color}"></div>
-          <button onclick="deleteOrder(${i})">Hapus</button>
-        `;
-
-        container.appendChild(wrapper);
+        container.appendChild(createOrderItemElement(i, orders[i]));
       }
     }
 
@@ -170,19 +208,6 @@
 
       saveOrders(newOrders);
       renderOrderList();
-    }
-  </script>
-  <script>
-    let deleteOrderIndex = -1;
-
-    function initiateOrderDeletion(index) {
-      document.getElementById('order-popup').classList.remove('hide');
-      deleteOrderIndex = index;
-    }
-
-    function handleDeletePopupClick() {
-      document.getElementById('order-popup').classList.add('hide');
-      deleteOrder(deleteOrderIndex);
     }
   </script>
 </body>
