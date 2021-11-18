@@ -2,10 +2,22 @@
 <html>
 <head>
   <title>IKEH</title>
+  <link rel="stylesheet" href="css/customization.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/popup.css">
   <style>
-    #color-container {
+    main {
       width: 80%;
-      height: 200px;
+      margin: auto;
+    }
+
+    #color-picker-container h3 {
+      text-align: center;
+    }
+    
+    #color-picker {
+      width: 100%;
+      height: 75px;
       margin: auto;
       display: flex;
       justify-content: center;
@@ -23,35 +35,196 @@
     .color-chosen, .color-box:hover {
       width: 75px;
       height: 75px;
+    }
+
+    .color-box:hover {
       border: 5px solid black;
     }
-  </style>
+
+    .color-chosen {
+      border: 3px solid black;
+    }
+
+    #bottom-input {
+      width: 100%;
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    #bottom-input > div {
+      margin: 0 20px;
+    }
+
+    #bottom-input > div > * {
+      margin: 0 10px;
+    }
+
+    #bottom-input > div:first-child {
+      display: flex;
+      justify-content: flex-end;
+    }
+</style>
 </head>
 <body>
-  <div id="color-container">
-    <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
-    <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
-    <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
-    <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
-    <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
-    <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
-    <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">You have made an order!</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleOrderPopupClick()">Yes, great!</button>
+      </div>
+    </div>
   </div>
+  <main>
+    <h1 class="tulisanTengah">Furniture</h1>
+    <div class="containerAtas">
+      <div class="containerKiri">
+        <img src="assets/kursi-1.jpg" alt="Kursi" class="imgThumbnail">
+        <h2>Kursi 1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a voluptatem reprehenderit possimus eveniet non eos. 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium numquam, optio 
+        </p>
+      </div>
+      <div class="containerKanan">
+        <div class = "isiContainerKanan">
+          <h3>Pilih Ukuran</h3>
+          <form action="">
+            <label for="lebar">Width</label>
+            <br>
+            <input type="number" id="lebar">
+            <br>
+            <label for="tinggi">Height</label>
+            <br>
+            <input type="number" id="tinggi">
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
+    <br>
+    <h2 class="tulisanTengah">Pilih Bahan</h2>
+    <div class="containerTengah">
+      <div class="ctrKiriT">
+        <h2 class="tulisanTengah">Jati</h2>
+        <img src="assets/kursi-1.jpg" alt="Jati" class="imgTengah">
+      </div>
+
+      <div class="ctrTengahT">
+        <h2 class="tulisanTengah">Bambu</h2>
+        <img src="assets/kursi-2.jpg" alt="Bambu" class="imgTengah">
+      </div>
+
+      <div class="ctrKananT">
+        <h2 class="tulisanTengah">Mahoni</h2>
+        <img src="assets/kasur-3.jpg" alt="Mahoni" class="imgTengah">
+      </div>
+    </div>
+
+    <div id="color-picker-container">
+      <h3>PICK YOUR FAVOURITE COLOR</h3>
+      <div id="color-picker" data-value="0">
+        <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
+        <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
+        <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
+        <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
+        <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
+        <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
+        <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+      </div>
+    </div>
+    <div>
+      <div id="bottom-input">
+        <div>
+          <label for="quantity">Jumlah Barang</label>
+          <input id="quantity" name="quantity" type="number" value="1" min="1">
+        </div>
+        <div>
+          <span>Rp2.500.000</span>
+        </div>
+        <div>
+          <button onclick="showOrderPopup()">Order</button>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 75px 0;">
+      <h1>Current Orders</h1>
+      <div id="current-orders" style="font-size: 25px; padding: 30px 0;"></div>
+      <button onclick="clearOrders()">Clear Orders</button>
+    </div>
+  </main>
+
+  <script src="js/color-picker.js"></script>
   <script>
-    let chosenColor = 0;
+    function showOrderPopup() {
+      document.getElementById('order-popup').classList.remove('hide');
+    }
 
-    function chooseColor(colorNumber) {
-      const chosenColorBox = document.getElementById(`color-${colorNumber}`);
+    function handleOrderPopupClick() {
+      document.getElementById('order-popup').classList.add('hide');
+      proceedOrder();
+      window.location.href = "#current-orders";
+    }
 
-      chosenColorBox.classList.add('color-chosen');
+    function proceedOrder() {
+      const orders = getCurrentOrders();
 
-      if (chosenColor > 0) {
-        const previousColorBox = document.getElementById(`color-${chosenColor}`);
-        previousColorBox.classList.remove('color-chosen');
+      orders.push({
+        width: getNumberInput('lebar'),
+        height: getNumberInput('tinggi'),
+        wood: 1,
+        color: getChosenColor(),
+        quantity: getNumberInput('quantity')
+      });
+
+      saveOrders(orders);
+
+      displayCurrentOrders();
+    }
+
+    function getCurrentOrders() {
+      let orders = JSON.parse(window.localStorage.getItem('orders'));
+
+      if (!orders) {
+        orders = [];
       }
 
-      chosenColor = colorNumber;
+      return orders;
+    }
+
+    function saveOrders(orders) {
+      window.localStorage.setItem('orders', JSON.stringify(orders));
+    }
+
+    function displayCurrentOrders() {
+      const orders = getCurrentOrders();
+
+      console.log(orders);
+
+      const currentOrdersDiv = document.getElementById('current-orders');
+
+      currentOrdersDiv.innerHTML = '';
+
+      for (let i = 0; i < orders.length; i++) {
+        const div = document.createElement('div');
+
+        div.innerHTML = JSON.stringify(orders[i]);
+
+        currentOrdersDiv.appendChild(div);
+      }
+    }
+
+    function getNumberInput(id) {
+      return Number(document.getElementById(id).value);
+    }
+
+    function clearOrders() {
+      window.localStorage.clear();
+
+      displayCurrentOrders();
     }
   </script>
 </body>
