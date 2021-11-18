@@ -2,18 +2,17 @@
 
 .containerAtas {
   width: auto;
-  margin: 30px auto;
-  padding: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+
 }
 
 .containerKiri {
-  width: 600px;
+  width: 800px;
   height: 250px;
-  /* background-color: red; */
   margin: 2px;
+  margin-left: 180px;
   display: flex;
   justify-content: center;
 }
@@ -21,13 +20,13 @@
 .containerKanan {
   width: 600px;
   height: 250px;
-  /* background-color: olive; */
   margin: 2px;
 }
 
 .isiContainerKanan {
   display: flex;
   justify-content: space-evenly;
+  margin-right: 100px;
 }
 
 .containerTengah {
@@ -38,7 +37,6 @@
   display: flex;
   justify-content: space-evenly;
 }
-
 
 .tulisanTengah {
   text-align: center;
@@ -64,21 +62,10 @@
   
 }
 
-
 .fontBig {
   font-size: 30px;
   font-weight: bold;
 }  
-
-.button {
-  cursor: pointer;
-  border: 0px;
-  transition-duration: 0.4s;
-}
-
-.button:hover {
-  border: 5px solid lightgrey;
-}
 
 .submit-button {
   background-color: white;
@@ -94,28 +81,48 @@
   background-color: rgb(89, 42, 165);
 }
 
-.button + .button {
-  margin-left: 100px;
-}
-
-.content {
-  background: white;
-  
-  padding: 1em;
+#material-picker-container h3{
   text-align: center;
-  
+}
+.card-container{
   display: flex;
   justify-content: center;
   
 }
 
-.title {
-  margin: 0 0 0.5em;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 2rem;
-  color: black;
-  line-height: 0.8;
-  text-align: center;
+.card{
+  background: white ;
+  width: 200px;
+  height: 200px;
+  margin: 50px;
+  border-radius: 20px;
+}
+
+.card:hover{
+  cursor: pointer;
+  color: white;
+  transform: scale(1.03);
+  transition: all 0.4s ease;
+}
+
+.card-image {
+  background-color: aqua;
+  height: 200px;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.card h2 {
+  width: 100%;
+}
+.kayu-jati {
+  background-image: url(./assets/kayujati.jpg);
+}
+
+.kayu-mahoni {
+  background-image: url(./assets/kayumahoni.jpg);
+}
+
+.kayu-bambu {
+  background-image: url(./assets/kayubambu.jpg);
 }

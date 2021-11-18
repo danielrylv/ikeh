@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>IKEH</title>
   <link rel="stylesheet" href="customization.css">
@@ -12,7 +13,7 @@
     #color-picker-container h3 {
       text-align: center;
     }
-    
+
     #color-picker {
       width: 100%;
       height: 75px;
@@ -30,7 +31,8 @@
       transition: width 0.5s, height 0.5s;
     }
 
-    .color-chosen, .color-box:hover {
+    .color-chosen,
+    .color-box:hover {
       width: 75px;
       height: 75px;
     }
@@ -46,47 +48,47 @@
       justify-content: center;
     }
 
-    #bottom-input > div {
+    #bottom-input>div {
       margin: 0 20px;
     }
 
-    #bottom-input > div > * {
+    #bottom-input>div>* {
       margin: 0 10px;
     }
 
-    #bottom-input > div:first-child {
+    #bottom-input>div:first-child {
       display: flex;
       justify-content: flex-end;
     }
 
-    #bottom-input > div:nth-child(2) {
-    }
+    #bottom-input>div:nth-child(2) {}
 
-    #bottom-input > div:nth-child(3) {
-    }
-
-
-</style>
+    #bottom-input>div:nth-child(3) {}
+  </style>
 </head>
+
 <body>
   <main>
     <h1 class="tulisanTengah">Furniture</h1>
-    
+
     <div class="containerAtas">
       <div class="containerKiri">
         <img src="assets/kursi-1.jpg" alt="Kursi" class="imgThumbnail">
-        
-        <p> <span class="fontBig">Kursi</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a voluptatem reprehenderit possimus eveniet non eos. 
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium numquam 
+
+        <p> <span class="fontBig">Kursi</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem
+          fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a
+          voluptatem reprehenderit possimus eveniet non eos.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium
+          numquam
         </p>
 
       </div>
 
       <div class="containerKanan">
-        <div class = "isiContainerKanan">
+        <div class="isiContainerKanan">
           <form>
             <h3 style="font-style: italic;">INPUT SIZE</h3>
-            <label for="lebar"> <span style="font-style: italic; font-weight: bold;" >Width (cm)</span></label>
+            <label for="lebar"> <span style="font-style: italic; font-weight: bold;">Width (cm)</span></label>
             <br>
             <input type="number" id="lebar">
             <br>
@@ -101,51 +103,59 @@
             <br>
             <button type="submit" class="submit-button">Submit</button>
 
-          </div>
+        </div>
         </form>
       </div>
     </div>
 
     <br>
 
-  <div class="content">
-    <h1 class="title">Pick Your Material</h1>
-  </div>
-  <div class="content content--buttons">
-    <button class="button button-one"> <img src="assets/kursi-1.jpg" alt="kursi" height="250px" width="250px"></button>
 
-    <button class="button button-two"> <img src="assets/kursi-1.jpg" alt="kursi" height="250px" width="250px"></button>
+    <div id="material-picker-container">
+      <h3 style="font-style: italic;">PICK YOUR MATERIAL</h3>
 
-    <button class="button button-three"><img src="assets/kursi-1.jpg" alt="kursi" height="250px" width="250px"></button>
-  </div>
-  
+      <section class="card-container">
 
-    <div id="color-picker-container">
-      <h3 style="font-style: italic;">PICK YOUR FAVOURITE COLOR</h3>
-      <div id="color-picker">
-        <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
-        <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
-        <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
-        <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
-        <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
-        <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
-        <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
-      </div>
-    </div>
-    <div>
-      <div id="bottom-input">
-        <div>
-          <label for="amount">Jumlah Barang</label>
-          <input id="amount" name="amount" type="number" value="1" min="1">
+        <div class="card">
+          <div class="card-image kayu-jati"></div>
+          <h3>Jati</h3>
         </div>
-        <div>
-          <span>Rp2.500.000</span>
+        <div class="card">
+          <div class="card-image kayu-mahoni"></div>
+          <h3>Mahoni</h3>
         </div>
-        <div>
-          <button>Order</button>
+        <div class="card">
+          <div class="card-image kayu-bambu"></div>
+          <h3>Bambu</h3>
+        </div>
+      </section>
+
+      <div id="color-picker-container">
+        <h3 style="font-style: italic;">PICK YOUR FAVOURITE COLOR</h3>
+        <div id="color-picker">
+          <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
+          <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
+          <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
+          <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
+          <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
+          <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
+          <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
         </div>
       </div>
-    </div>
+      <div>
+        <div id="bottom-input">
+          <div>
+            <label for="amount">Jumlah Barang</label>
+            <input id="amount" name="amount" type="number" value="1" min="1">
+          </div>
+          <div>
+            <span>Rp2.500.000</span>
+          </div>
+          <div>
+            <button>Order</button>
+          </div>
+        </div>
+      </div>
   </main>
 
   <script>
@@ -169,4 +179,5 @@
     }
   </script>
 </body>
+
 </html>
