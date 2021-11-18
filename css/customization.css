@@ -1,51 +1,36 @@
-<<<<<<< HEAD:customization.css
 
-
-=======
->>>>>>> 34c5c8ee6690f976f32bf13d3e2f9132bf1a734e:css/customization.css
-body {
-  background-color: white;
-}
-
-.tulisanJudul {
-  text-align: center;
-}
 
 .containerAtas {
   width: auto;
-  margin: 30px auto;
-  padding: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+
 }
 
 .containerKiri {
-  width: 600px;
+  width: 800px;
   height: 250px;
-  background-color: red;
   margin: 2px;
+  margin-left: 180px;
   display: flex;
   justify-content: center;
 }
-
-
 
 .containerKanan {
   width: 600px;
   height: 250px;
-  background-color: olive;
   margin: 2px;
 }
 
 .isiContainerKanan {
-  margin-top: 20px;
-  margin-left: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 100px;
 }
 
 .containerTengah {
   width: auto;
-
   margin: 30px auto;
   padding: 5px;
   box-sizing: border-box;
@@ -53,29 +38,15 @@ body {
   justify-content: space-evenly;
 }
 
-.ctrKiriT {
-  width: 250px;
-  height: 300px;
-  background-color: blue;
-  margin: 2px;
-}
-
-.ctrTengahT {
-  width: 250px;
-  height: 300px;
-  background-color: yellowgreen;
-  margin: 2px;
-}
-
-.ctrKananT {
-  width: 250px;
-  height: 300px;
-  background-color: pink;
-  margin: 2px;
-}
-
 .tulisanTengah {
   text-align: center;
+  margin: 0 0 0.5em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  color: black;
+  line-height: 0.8;
 }
 
 .imgTengah {
@@ -91,41 +62,67 @@ body {
   
 }
 
-
 .fontBig {
   font-size: 30px;
   font-weight: bold;
 }  
 
+.submit-button {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+.submit-button:hover {
+  background-color: rgb(89, 42, 165);
+}
 
-
-.button {
-  cursor: pointer;
-  border: 0;
+#material-picker-container h3{
+  text-align: center;
+}
+.card-container{
+  display: flex;
+  justify-content: center;
   
 }
 
-.button:hover {
-  border: 5px solid black;
-}
-.button + .button {
-  margin-left: 1em;
-}
-
-.content {
-  background: white;
-  width: 70%;
-  padding: 1em;
-  text-align: center;
-  margin-bottom: 1em;
+.card{
+  background: white ;
+  width: 200px;
+  height: 200px;
+  margin: 50px;
+  border-radius: 20px;
 }
 
-.title {
-  margin: 0 0 0.5em;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 3rem;
-  color: black;
-  line-height: 0.8;
+.card:hover{
+  cursor: pointer;
+  color: white;
+  transform: scale(1.03);
+  transition: all 0.4s ease;
+}
+
+.card-image {
+  background-color: aqua;
+  height: 200px;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.card h2 {
+  width: 100%;
+}
+.kayu-jati {
+  background-image: url(../assets/kayujati.jpg);
+}
+
+.kayu-mahoni {
+  background-image: url(../assets/kayumahoni.jpg);
+}
+
+.kayu-bambu {
+  background-image: url(../assets/kayubambu.jpg);
 }
