@@ -1,13 +1,5 @@
 
 
-body {
-background-color: white;
-}
-
-.tulisanJudul {
-  text-align: center;
-}
-
 .containerAtas {
   width: auto;
   margin: 30px auto;
@@ -20,29 +12,26 @@ background-color: white;
 .containerKiri {
   width: 600px;
   height: 250px;
-  background-color: red;
+  /* background-color: red; */
   margin: 2px;
   display: flex;
   justify-content: center;
 }
 
-
-
 .containerKanan {
   width: 600px;
   height: 250px;
-  background-color: olive;
+  /* background-color: olive; */
   margin: 2px;
 }
 
 .isiContainerKanan {
-  margin-top: 20px;
-  margin-left: 40px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .containerTengah {
   width: auto;
-
   margin: 30px auto;
   padding: 5px;
   box-sizing: border-box;
@@ -50,26 +39,6 @@ background-color: white;
   justify-content: space-evenly;
 }
 
-.ctrKiriT {
-  width: 250px;
-  height: 300px;
-  background-color: blue;
-  margin: 2px;
-}
-
-.ctrTengahT {
-  width: 250px;
-  height: 300px;
-  background-color: yellowgreen;
-  margin: 2px;
-}
-
-.ctrKananT {
-  width: 250px;
-  height: 300px;
-  background-color: pink;
-  margin: 2px;
-}
 
 .tulisanTengah {
   text-align: center;
@@ -105,7 +74,8 @@ background-color: white;
 
 .button {
   cursor: pointer;
-  border: 0;
+  border: 0px;
+  
   
 }
 
@@ -114,7 +84,7 @@ background-color: white;
   
 }
 .button + .button {
-  margin-left: 1em;
+  margin-left: 100px;
 }
 
 .content {
@@ -123,8 +93,6 @@ background-color: white;
   padding: 1em;
   text-align: center;
   justify-content: center
-  /* margin-bottom: 1em; */
-  
 }
 
 .title {
@@ -132,7 +100,7 @@ background-color: white;
   text-transform: uppercase;
   font-weight: 900;
   font-style: italic;
-  font-size: 3rem;
+  font-size: 2rem;
   color: black;
   line-height: 0.8;
   text-align: center;
