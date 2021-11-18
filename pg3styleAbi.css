@@ -14,7 +14,6 @@ background-color: white;
 
 .containerAtas {
   width: auto;
-  border: 5px solid black;
   margin: 30px auto;
   padding: 5px;
   box-sizing: border-box;
@@ -27,7 +26,11 @@ background-color: white;
   height: 250px;
   background-color: red;
   margin: 2px;
+  display: flex;
+  justify-content: center;
 }
+
+
 
 .containerKanan {
   width: 600px;
@@ -43,7 +46,7 @@ background-color: white;
 
 .containerTengah {
   width: auto;
-  border: 5px solid black;
+
   margin: 30px auto;
   padding: 5px;
   box-sizing: border-box;
@@ -86,11 +89,9 @@ background-color: white;
   width: 200px;
   height: 200px;
   padding: 25px;
-  float: left;
-}
-
-.deskripsi {
   
 }
+
+
 
 
