@@ -13,30 +13,68 @@
     }
 
     #orders-list img {
-      width: 50px;
-      height: 50px;
+      width: 200px;
+      height: 200px;
     }
 
     #orders-list .color-box {
       width: 20px;
       height: 20px;
     }
+
+    #orders-list .item-body {
+      display: flex;
+    }
+
+    #orders-list .item-dimensions-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #orders-list .item-dimensions-container > div {
+      text-align: center;
+    }
+
+    #orders-list .item-dimensions-container > div:nth-child(2) {
+      margin: 0 30px;
+    }
   </style>
 </head>
 <body>
   <main>
     <div id="orders-list">
-      <div>
-        <div>Kursi</div>
-        <img src="assets/kursi-1.jpg">
-        <div>Panjang: 100</div>  
-        <div>Lebar: 75</div>  
-        <div>Tinggi: 55</div>  
-        <div>Material: jati</div>
-        <div>Jumlah: 11</div>  
-        <div>Harga: Rp2.000.000</div>
-        <div class="color-box" style="background-color: lawngreen"></div>
-        <button>Hapus</button>
+      <div id="order-item">
+        <h2>Kursi Duar</h2>
+        <div class="item-body">
+          <div>
+            <img src="assets/kursi-duar.jpg">
+          </div>
+          <div>
+            <div class="item-dimensions-container">
+              <div>
+                <div>Panjang</div>
+                <div>100</div>
+              </div>  
+              <div>
+                <div>Lebar</div>
+                <div>75</div>
+              </div>  
+              <div>
+                <div>Tinggi</div>
+                <div>55</div>
+              </div>  
+            </div>
+            <div>
+              <div>Material: jati</div>
+              <div class="color-box" style="background-color: lawngreen"></div>
+            </div>
+            <div>
+              <div>Jumlah: 11</div>  
+              <div>Harga: Rp2.000.000</div>
+              <button>Hapus</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
