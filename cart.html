@@ -26,7 +26,18 @@
 <body>
   <main>
     <div id="orders-list">
-
+      <div>
+        <div>Kursi</div>
+        <img src="assets/kursi-1.jpg">
+        <div>Panjang: 100</div>  
+        <div>Lebar: 75</div>  
+        <div>Tinggi: 55</div>  
+        <div>Material: jati</div>
+        <div>Jumlah: 11</div>  
+        <div>Harga: Rp2.000.000</div>
+        <div class="color-box" style="background-color: lawngreen"></div>
+        <button>Hapus</button>
+      </div>
     </div>
   </main>
   <script src="js/order.js"></script>
@@ -36,7 +47,9 @@
     function renderOrderList() {
       const orders = getCurrentOrders();
 
-      console.log(orders);
+      if (orders.length == 0) {
+        return;
+      }
 
       const container = document.getElementById('orders-list');
       container.innerHTML = '';
