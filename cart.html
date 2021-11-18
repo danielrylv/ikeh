@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    main {
+      width: 60%;
+      margin: 30px auto;
+    }
+
+    #orders-list > div {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="orders-list">
+
+    </div>
+  </main>
+  <script src="js/order.js"></script>
+  <script>
+    renderOrderList();
+
+    function renderOrderList() {
+      const orders = getCurrentOrders();
+
+      console.log(orders);
+
+      const container = document.getElementById('orders-list');
+      container.innerHTML = '';
+
+      for (let i = 0; i < orders.length; i++) {
+        const wrapper = document.createElement('div');
+
+        wrapper.id = `order-${i}`;
+        wrapper.innerHTML = `
+          <div>Furnitur: Kursi</div>
+          <div>Model: 3</div>
+          <div>Panjang: ${orders[i].width}</div>  
+          <div>Tinggi: ${orders[i].height}</div>  
+          <div>Kayu: ${orders[i].wood}</div>
+          <div>Color: ${orders[i].color}</div>
+          <div>Jumlah: ${orders[i].quantity}</div>  
+          <div>Harga: ${formatPrice(orders[i].price)}</div>
+          <button onclick="deleteOrder(${i})">Hapus</button>
+        `;
+
+        container.appendChild(wrapper);
+      }
+    }
+
+    function deleteOrder(index) {
+      let orders = getCurrentOrders();
+      let newOrders = [];
+
+      for (let i = 0; i < orders.length; i++) {
+        if (i != index) {
+          newOrders.push(orders[i]);
+        }
+      }
+
+      saveOrders(newOrders);
+      renderOrderList();
+    }
+  </script>
+</body>
+</html>
