@@ -60,10 +60,6 @@
       display: flex;
       justify-content: flex-end;
     }
-
-    #bottom-input>div:nth-child(2) {}
-
-    #bottom-input>div:nth-child(3) {}
   </style>
 </head>
 
@@ -109,8 +105,7 @@
     </div>
 
     <br>
-
-
+    
     <div id="material-picker-container">
       <h3 style="font-style: italic;">PICK YOUR MATERIAL</h3>
 
@@ -129,54 +124,58 @@
           <h3>Bambu</h3>
         </div>
       </section>
-
-      <div id="color-picker-container">
-        <h3 style="font-style: italic;">PICK YOUR FAVOURITE COLOR</h3>
-        <div id="color-picker">
-          <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
-          <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
-          <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
-          <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
-          <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
-          <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
-          <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+    </div>
+        
+    <div id="color-picker-container">
+      <h3>PICK YOUR FAVOURITE COLOR</h3>
+      <div id="color-picker" data-value="0">
+        <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
+        <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
+        <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
+        <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
+        <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
+        <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
+        <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+      </div>
+    </div>
+    <div>
+      <div id="bottom-input">
+        <div>
+          <label for="quantity">Jumlah Barang</label>
+          <input id="quantity" name="quantity" type="number" value="1" min="1" oninput="updatePrice()">
+        </div>
+        <div id="price">
+          Rp2.500.000
+        </div>
+        <div>
+          <button onclick="showOrderPopup()">Simpan Pesanan</button>
         </div>
       </div>
-      <div>
-        <div id="bottom-input">
-          <div>
-            <label for="amount">Jumlah Barang</label>
-            <input id="amount" name="amount" type="number" value="1" min="1">
-          </div>
-          <div>
-            <span>Rp2.500.000</span>
-          </div>
-          <div>
-            <button>Order</button>
-          </div>
-        </div>
-      </div>
+    </div>
   </main>
 
+  <script src="js/color-picker.js"></script>
+  <script src="js/order.js"></script>
   <script>
-    let chosenColor = 0;
+    updatePrice();
 
-    function chooseColor(colorNumber) {
-      if (colorNumber == chosenColor) {
-        return;
-      }
-
-      const chosenColorBox = document.getElementById(`color-${colorNumber}`);
-
-      chosenColorBox.classList.add('color-chosen');
-
-      if (chosenColor > 0) {
-        const previousColorBox = document.getElementById(`color-${chosenColor}`);
-        previousColorBox.classList.remove('color-chosen');
-      }
-
-      chosenColor = colorNumber;
+    function showOrderPopup() {
+      document.getElementById('order-popup').classList.remove('hide');
     }
+
+    function handleOrderPopupClick() {
+      document.getElementById('order-popup').classList.add('hide');
+      proceedOrder();
+      window.location.href = "#current-orders";
+    }
+
+    function updatePrice() {
+      document.getElementById('price').innerHTML = formatPrice(calculatePrice());
+    }
+
+
+
+
   </script>
 </body>
 
