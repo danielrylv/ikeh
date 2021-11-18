@@ -1,7 +1,10 @@
+<<<<<<< HEAD:customization.css
 
 
+=======
+>>>>>>> 34c5c8ee6690f976f32bf13d3e2f9132bf1a734e:css/customization.css
 body {
-background-color: white;
+  background-color: white;
 }
 
 .tulisanJudul {
@@ -73,13 +76,6 @@ background-color: white;
 
 .tulisanTengah {
   text-align: center;
-  margin: 0 0 0.5em;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-style: italic;
-  font-size: 3rem;
-  color: black;
-  line-height: 0.8;
 }
 
 .imgTengah {
@@ -110,8 +106,7 @@ background-color: white;
 }
 
 .button:hover {
-  border: 5px solid lightgrey;
-  
+  border: 5px solid black;
 }
 .button + .button {
   margin-left: 1em;
@@ -119,12 +114,10 @@ background-color: white;
 
 .content {
   background: white;
-  width: 100%;
+  width: 70%;
   padding: 1em;
   text-align: center;
-  justify-content: center
-  /* margin-bottom: 1em; */
-  
+  margin-bottom: 1em;
 }
 
 .title {
@@ -135,5 +128,4 @@ background-color: white;
   font-size: 3rem;
   color: black;
   line-height: 0.8;
-  text-align: center;
 }
