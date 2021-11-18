@@ -83,9 +83,9 @@
     <h1 class="tulisanTengah">Furniture</h1>
     <div class="containerAtas">
       <div class="containerKiri">
-        <img src="assets/kursi-1.jpg" alt="Kursi" class="imgThumbnail">
+        <img src="assets/{{type}}-1.jpg" alt="{{type}}" class="imgThumbnail">
 
-        <p> <span class="fontBig">Kursi</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem
+        <p> <span class="fontBig">{{type}}</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem
           fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a
           voluptatem reprehenderit possimus eveniet non eos.
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium
@@ -167,9 +167,22 @@
       </div>
     </div>
   </main>
-
   <script src="js/color-picker.js"></script>
   <script src="js/order.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    const titleByType = {
+      chair: 'kursi',
+      table: 'meja',
+      bed: 'kasur'
+    };
+
+    renderTemplates({
+      type: titleByType[type]
+    });
+  </script>
   <script>
     updatePrice();
 

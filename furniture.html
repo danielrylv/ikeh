@@ -143,7 +143,7 @@
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
         Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
       </p>
-      <a id="Linkkursi1" href="customization.html?type={{type}}&model=1">
+      <a id="Linkkursi1" href="customization.html?type={{param-type}}&model=1">
         <button class="tombol">
           Customize Your Own
         </button>
@@ -167,7 +167,7 @@
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
         Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
       </p>
-      <a href="customization.html?type={{type}}&model=2">
+      <a href="customization.html?type={{param-type}}&model=2">
         <button class="tombol">
           Customize Your Own
         </button>
@@ -190,7 +190,7 @@
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
         Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
       </p>
-      <a href="customization.html?type={{type}}&model=3">
+      <a href="customization.html?type={{param-type}}&model=3">
         <button class="tombol">
           Customize Your Own
         </button>
@@ -209,7 +209,8 @@
     };
 
     renderTemplates({
-      type: titleByType[type]
+      type: titleByType[type],
+      'param-type': type
     });
   </script>
 </body>
