@@ -1,0 +1,90 @@
+body {
+  background-color: white;
+}
+
+.tulisanJudul {
+  text-align: center;
+}
+
+.containerAtas {
+  width: auto;
+  border: 5px solid black;
+  margin: 30px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerKiri {
+  width: 600px;
+  height: 250px;
+  background-color: red;
+  margin: 2px;
+}
+
+.containerKanan {
+  width: 600px;
+  height: 250px;
+  background-color: olive;
+  margin: 2px;
+}
+
+.isiContainerKanan {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.containerTengah {
+  width: auto;
+  border: 5px solid black;
+  margin: 30px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ctrKiriT {
+  width: 250px;
+  height: 300px;
+  background-color: blue;
+  margin: 2px;
+}
+
+.ctrTengahT {
+  width: 250px;
+  height: 300px;
+  background-color: yellowgreen;
+  margin: 2px;
+}
+
+.ctrKananT {
+  width: 250px;
+  height: 300px;
+  background-color: pink;
+  margin: 2px;
+}
+
+.tulisanTengah {
+  text-align: center;
+}
+
+.imgTengah {
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+}
+
+.imgThumbnail {
+  width: 200px;
+  height: 200px;
+  padding: 25px;
+  float: left;
+}
+
+.deskripsi {
+  
+}
+
+
