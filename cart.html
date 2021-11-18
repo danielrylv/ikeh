@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/popup-hapus-order.css">
   <style>
     main {
       width: 60%;
@@ -71,6 +72,15 @@
   </style>
 </head>
 <body>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">Are you sure deleting this order?</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleDeletePopupClick()">Yes, please!</button>
+      </div>
+    </div>
+  </div>
   <main>
     <div id="orders-list">
       <div class="order-item">
@@ -101,7 +111,7 @@
             <div class="row-3">
               <div>Jumlah: 11</div>  
               <div>Harga: Rp2.000.000</div>
-              <button>Hapus</button>
+              <button onclick="initiateOrderDeletion(-1)">Hapus</button>
             </div>
           </div>
         </div>
@@ -145,6 +155,11 @@
 
     function deleteOrder(index) {
       let orders = getCurrentOrders();
+      
+      if (orders.length == 0) {
+        return;
+      }
+
       let newOrders = [];
 
       for (let i = 0; i < orders.length; i++) {
@@ -155,6 +170,19 @@
 
       saveOrders(newOrders);
       renderOrderList();
+    }
+  </script>
+  <script>
+    let deleteOrderIndex = -1;
+
+    function initiateOrderDeletion(index) {
+      document.getElementById('order-popup').classList.remove('hide');
+      deleteOrderIndex = index;
+    }
+
+    function handleDeletePopupClick() {
+      document.getElementById('order-popup').classList.add('hide');
+      deleteOrder(deleteOrderIndex);
     }
   </script>
 </body>
