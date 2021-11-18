@@ -33,7 +33,6 @@
 
         .kanan {
             text-align: right;
-
         }
 
         .judul {
@@ -42,9 +41,7 @@
         }
 
         .card {
-            padding : 50px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin: 40px;
             overflow: auto;
         }
 
@@ -64,30 +61,30 @@
         }
 
         .dropbtn {
-            padding: 30px 30px;
+            padding: 30px;
             border-radius: 20px;
             text-align: center;
             font-size: 30px;
-            display: inline-block;
+            display: block;
             transition-duration: 0.4s;
-            overflow: auto;
+            padding-right: 0px;
             width: 100%;
             border: 2px solid rgb(89, 42, 165);
-            
         }
 
         .dropdown {
-            position: relative;
+  
             display: block;
+            margin-left: 50px;
+            margin-right: 70px;
         }
 
         .dropdown-content {
             display: none;
-            position: sticky;
             text-align: center;
             box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.2);
-            transition-duration: 0.4s;
-            overflow: auto;
+            margin-right: 50px;
+            margin-left: 50px;
 
         }
 
@@ -111,6 +108,7 @@
 
         .dropdown:hover .dropbtn {
         background-color: rgb(89, 42, 165);
+        
         }
     </style>
 </head>
@@ -124,20 +122,20 @@
         <div class="dropdown">
             <a class="dropbtn"> Meja </a>
             <div class="dropdown-content">
-                <a href="#meja 1"> Duar </a>
-                <a href="#meja 2"> Asik </a>
-                <a href="#meja 3"> Darius </a>
+                <a href="#Meja 1"> Duar </a>
+                <a href="#Meja 2"> Asik </a>
+                <a href="#Meja 3"> Darius </a>
             </div>
 
         </div>
     </header>
     <main>
 
-        <article id="meja 1" class="card">
+        <article id="Meja 1" class="card">
             <h2 class="judul">
                 Meja Duar
             </h2>
-            <img src="aset/meja 1.jpg" alt="meja 1" class="desainkiri">
+            <img src="assets/Meja-1.jpg" alt="Meja 1" class="desainkiri">
             <p style=font-size:30px>
 
                 Lorem ipsum dolor sit amet, <br>
@@ -150,19 +148,19 @@
                 volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
                 Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
             </p>
-
+            <a href="customization.html">
             <button class="tombol">
-               <a href ="#"> Customize Your Own </a>
+               Customize Your Own 
             </button>
-
+        </a>
         </article>
 
-        <article id="meja 2" class="card">
+        <article id="Meja 2" class="card">
 
             <h2 class="judul">
                 Meja Asik
             </h2>
-            <img src="aset/Meja 2.jpg" alt="meja 2" class="desainkanan">
+            <img src="assets/Meja-2.jpg" alt="Meja 2" class="desainkanan">
             <p style=font-size:30px class="kanan">
                 Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
@@ -174,19 +172,19 @@
                 volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
                 Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
             </p>
-            <center>
+            <a href="customization.html">
                 <button class="tombol">
                     Customize Your Own
                 </button>
-            </center>
+            </a>
         </article>
 
-        <article id="meja 3" class="card">
+        <article id="Meja 3" class="card">
 
             <h2 class="judul">
                 Meja Darius
             </h2>
-            <img src="aset/Meja 3.jpg" alt="meja 3" class="desainkiri">
+            <img src="assets/Meja-3.jpg" alt="Meja 3" class="desainkiri">
             <p style=font-size:30px>
                 Lorem ipsum dolor sit amet, <br>
                 consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
@@ -198,11 +196,11 @@
                 volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
                 Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
             </p>
-            <center>
+            <a href="customization.html">
                 <button class="tombol">
                     Customize Your Own
                 </button>
-            </center>
+            </a>
         </article>
 
     </main>
