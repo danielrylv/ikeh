@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>IKEH</title>
+  <link rel="stylesheet" href="customization.css">
   <style>
     main {
       width: 80%;
@@ -66,7 +67,59 @@
 </style>
 </head>
 <body>
+
+  
   <main>
+    <h1 class="tulisanTengah">Furniture</h1>
+    
+    <div class="containerAtas">
+      <div class="containerKiri">
+        <img src="assets/kursi-1.jpg" alt="Kursi" class="imgThumbnail">
+        <h2>Kursi 1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a voluptatem reprehenderit possimus eveniet non eos. 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium numquam, optio 
+        </p>
+      </div>
+
+      <div class="containerKanan">
+        <div class = "isiContainerKanan">
+          <h3>Pilih Ukuran</h3>
+          <form action="">
+            <label for="lebar">Width</label>
+            <br>
+            <input type="number" id="lebar">
+            <br>
+            <label for="tinggi">Height</label>
+            <br>
+            <input type="number" id="tinggi">
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+    <br>
+    <h2 class="tulisanTengah">Pilih Bahan</h2>
+    <div class="containerTengah">
+      <div class="ctrKiriT">
+        <h2 class="tulisanTengah">Jati</h2>
+        <img src="assets/kursi-1.jpg" alt="Jati" class="imgTengah">
+      </div>
+
+      <div class="ctrTengahT">
+        <h2 class="tulisanTengah">Bambu</h2>
+        <img src="assets/kursi-2.jpg" alt="Bambu" class="imgTengah">
+      </div>
+
+      <div class="ctrKananT">
+        <h2 class="tulisanTengah">Mahoni</h2>
+        <img src="assets/kasur-3.jpg" alt="Mahoni" class="imgTengah">
+      </div>
+    </div>
+
     <div id="color-picker-container">
       <h3>PICK YOUR FAVOURITE COLOR</h3>
       <div id="color-picker">
@@ -94,7 +147,6 @@
       </div>
     </div>
   </main>
-  
 
   <script>
     let chosenColor = 0;
