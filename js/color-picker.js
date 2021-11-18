@@ -1,26 +1,28 @@
-function chooseColor(colorNumber) {
+function chooseColor(color) {
   const chosenColor = getChosenColor();
 
-  if (colorNumber == chosenColor) {
+  if (color == chosenColor) {
     return;
   }
 
-  const chosenColorBox = document.getElementById(`color-${colorNumber}`);
+  const chosenColorBox = document.getElementById(`color-${color}`);
 
   chosenColorBox.classList.add('color-chosen');
 
-  if (chosenColor > 0) {
+  if (chosenColor) {
     const previousColorBox = document.getElementById(`color-${chosenColor}`);
     previousColorBox.classList.remove('color-chosen');
   }
 
-  setChosenColor(colorNumber);
+  setChosenColor(color);
 }
 
 function getChosenColor() {
-  return document.getElementById('color-picker').dataset.value;
+  const color = document.getElementById('color-picker').dataset.value;
+
+  return color != null ? color : '';
 }
 
-function setChosenColor(colorNumber) {
-  document.getElementById('color-picker').dataset.value = colorNumber;
+function setChosenColor(color) {
+  document.getElementById('color-picker').dataset.value = color;
 }

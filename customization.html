@@ -70,7 +70,33 @@
       border: 1px solid #0a58ca;
     }
 
-    
+    #color-dodgerblue {
+      background-color: dodgerblue;
+    }
+
+    #color-deeppink {
+      background-color: deeppink;
+    }
+
+    #color-gold {
+      background-color: gold;
+    }
+
+    #color-forestgreen {
+      background-color: forestgreen;
+    }
+
+    #color-darkviolet {
+      background-color: darkviolet;
+    }
+
+    #color-lightseagreen {
+      background-color: lightseagreen;
+    }
+
+    #color-lawngreen {
+      background-color: lawngreen;
+    }
   </style>
 </head>
 
@@ -150,14 +176,14 @@
         
     <div id="color-picker-container">
       <h3>PICK YOUR FAVOURITE COLOR</h3>
-      <div id="color-picker" data-value="0">
-        <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
-        <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
-        <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
-        <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
-        <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
-        <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
-        <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+      <div id="color-picker">
+        <div id="color-dodgerblue" class="color-box" onclick="chooseColor('dodgerblue')"></div>
+        <div id="color-deeppink" class="color-box" onclick="chooseColor('deeppink')"></div>
+        <div id="color-gold" class="color-box" onclick="chooseColor('gold')"></div>
+        <div id="color-forestgreen" class="color-box" onclick="chooseColor('forestgreen')"></div>
+        <div id="color-darkviolet" class="color-box" onclick="chooseColor('darkviolet')"></div>
+        <div id="color-lightseagreen" class="color-box" onclick="chooseColor('lightseagreen')"></div>
+        <div id="color-lawngreen" class="color-box" onclick="chooseColor('lawngreen')"></div>
       </div>
     </div>
     <div id="saving-order-container">
