@@ -66,9 +66,17 @@
 </head>
 
 <body>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">You have made an order!</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleOrderPopupClick()">Yes, great!</button>
+      </div>
+    </div>
+  </div>
   <main>
     <h1 class="tulisanTengah">Furniture</h1>
-
     <div class="containerAtas">
       <div class="containerKiri">
         <img src="assets/kursi-1.jpg" alt="Kursi" class="imgThumbnail">
