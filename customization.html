@@ -2,8 +2,57 @@
 <html>
 <head>
   <title>IKEH</title>
+  <style>
+    #color-container {
+      width: 80%;
+      height: 200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .color-box {
+      width: 50px;
+      height: 50px;
+      margin: 0 15px;
+      box-sizing: border-box;
+      transition: width 0.5s, height 0.5s;
+    }
+
+    .color-chosen, .color-box:hover {
+      width: 75px;
+      height: 75px;
+      border: 5px solid black;
+    }
+  </style>
 </head>
 <body>
+  <div id="color-container">
+    <div id="color-1" class="color-box" style="background-color: dodgerblue;" onclick="chooseColor(1)"></div>
+    <div id="color-2" class="color-box" style="background-color: deeppink;" onclick="chooseColor(2)"></div>
+    <div id="color-3" class="color-box" style="background-color: gold;" onclick="chooseColor(3)"></div>
+    <div id="color-4" class="color-box" style="background-color: forestgreen;" onclick="chooseColor(4)"></div>
+    <div id="color-5" class="color-box" style="background-color: darkviolet;" onclick="chooseColor(5)"></div>
+    <div id="color-6" class="color-box" style="background-color: lightseagreen;" onclick="chooseColor(6)"></div>
+    <div id="color-7" class="color-box" style="background-color: lawngreen;" onclick="chooseColor(7)"></div>
+  </div>
 
+  <script>
+    let chosenColor = 0;
+
+    function chooseColor(colorNumber) {
+      const chosenColorBox = document.getElementById(`color-${colorNumber}`);
+
+      chosenColorBox.classList.add('color-chosen');
+
+      if (chosenColor > 0) {
+        const previousColorBox = document.getElementById(`color-${chosenColor}`);
+        previousColorBox.classList.remove('color-chosen');
+      }
+
+      chosenColor = colorNumber;
+    }
+  </script>
 </body>
 </html>
