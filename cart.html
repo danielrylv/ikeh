@@ -11,6 +11,16 @@
     #orders-list > div {
       margin-bottom: 30px;
     }
+
+    #orders-list img {
+      width: 50px;
+      height: 50px;
+    }
+
+    #orders-list .color-box {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
@@ -38,12 +48,13 @@
         wrapper.innerHTML = `
           <div>Furnitur: Kursi</div>
           <div>Model: 3</div>
+          <img src="assets/${orders[i].type}-${orders[i].model}.jpg">
           <div>Panjang: ${orders[i].width}</div>  
           <div>Tinggi: ${orders[i].height}</div>  
           <div>Kayu: ${orders[i].wood}</div>
-          <div>Color: ${orders[i].color}</div>
           <div>Jumlah: ${orders[i].quantity}</div>  
           <div>Harga: ${formatPrice(orders[i].price)}</div>
+          <div class="color-box" style="background-color: ${orders[i].color}"></div>
           <button onclick="deleteOrder(${i})">Hapus</button>
         `;
 

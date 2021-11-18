@@ -196,14 +196,9 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type');
-    const titleByType = {
-      chair: 'kursi',
-      table: 'meja',
-      bed: 'kasur'
-    };
 
     renderTemplates({
-      type: titleByType[type]
+      type: type
     });
   </script>
   <script>

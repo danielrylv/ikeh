@@ -1,7 +1,12 @@
 function proceedOrder() {
   const orders = getCurrentOrders();
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type');
+  const model = params.get('model');
 
   orders.push({
+    type,
+    model,
     width: getNumberInput('lebar'),
     height: getNumberInput('tinggi'),
     wood: 1,
