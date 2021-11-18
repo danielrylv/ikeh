@@ -1,8 +1,4 @@
 
-html, body {
-  margin:0;
-  padding:0;
-}
 
 body {
 background-color: white;
@@ -18,7 +14,7 @@ background-color: white;
   padding: 5px;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .containerKiri {
@@ -40,7 +36,7 @@ background-color: white;
 }
 
 .isiContainerKanan {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 40px;
 }
 
@@ -93,5 +89,40 @@ background-color: white;
 }
 
 
+.fontBig {
+  font-size: 30px;
+  font-weight: bold;
+}  
 
 
+
+.button {
+  cursor: pointer;
+  border: 0;
+  
+}
+
+.button:hover {
+  border: 5px solid black;
+}
+.button + .button {
+  margin-left: 1em;
+}
+
+.content {
+  background: white;
+  width: 70%;
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.title {
+  margin: 0 0 0.5em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 3rem;
+  color: black;
+  line-height: 0.8;
+}
