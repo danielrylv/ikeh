@@ -1,0 +1,41 @@
+body {
+  background-color: #ffdfc4;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.logincontain {
+  width: 300px;
+  
+  justify-content: center
+}
+
+.full {
+  width: 100%;
+}
+
+button {
+  background-color: #b14c2d;
+  outline: none;
+  color: #ebf4ff;
+  cursor: pointer
+}
+
+h1 {
+  font-family: 'Tangerine', cursive, bold;
+  font-size: 100px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-family: 'El Messiri', narrow;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
