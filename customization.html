@@ -114,7 +114,7 @@
     <h1 class="tulisanTengah">Furniture</h1>
     <div class="containerAtas">
       <div class="containerKiri">
-        <img src="assets/{{type}}-1.jpg" alt="{{type}}" class="imgThumbnail">
+        <img src="assets/{{type}}-{{model}}.jpg" alt="{{type}}" class="imgThumbnail">
 
         <p><span class="fontBig capitalize">{{type}}</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem
           fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a
@@ -196,10 +196,9 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const type = params.get('type');
+    const model = params.get('model');
 
-    renderTemplates({
-      type: type
-    });
+    renderTemplates({type, model});
   </script>
   <script>
     updatePrice();
