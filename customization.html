@@ -67,12 +67,12 @@
 </style>
 </head>
 <body>
-  <div class="popup-wrapper hide">
+  <div id="order-popup" class="popup-wrapper hide">
     <div class="overlay"></div>
     <div class="popup-box">
       <div class="popup-text">You have made an order!</div>
       <div class="popup-button-wrapper">
-        <button>Yes, great!</button>
+        <button onclick="handleOrderPopupClick()">Yes, great!</button>
       </div>
     </div>
   </div>
@@ -146,7 +146,7 @@
           <span>Rp2.500.000</span>
         </div>
         <div>
-          <button onclick="order()">Order</button>
+          <button onclick="showOrderPopup()">Order</button>
         </div>
       </div>
     </div>
@@ -159,7 +159,17 @@
 
   <script src="js/color-picker.js"></script>
   <script>
-    function order() {
+    function showOrderPopup() {
+      document.getElementById('order-popup').classList.remove('hide');
+    }
+
+    function handleOrderPopupClick() {
+      document.getElementById('order-popup').classList.add('hide');
+      proceedOrder();
+      window.location.href = "#current-orders";
+    }
+
+    function proceedOrder() {
       const orders = getCurrentOrders();
 
       orders.push({
