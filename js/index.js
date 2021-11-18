@@ -29,46 +29,15 @@ checkLoginForm.addEventListener('submit', function(event) {
       center.removeChild(document.querySelector('#slogan'))
 
       button.innerHTML = "Ubah Nama dan Email"
-      const datangnama = document.createElement('h4')
-      datangnama.innerHTML = ``
-      const datangnama1 = document.createElement(`p`)
-      datangnama.innerHTML = ``
-      const datangnama2 = document.createElement('h2')
-      datangnama2.innerHTML = `Silahkan pilih furnitur macam apa yang ingin anda pesan`
-      center.appendChild(datangnama)
-      document.getElementsByTagName("H4")[0].innerHTML = `Selamat datang ${namauser}!`
-      center.appendChild(datangnama1)
-      document.getElementsByTagName("P")[1].innerHTML = `(dengan email: ${emailuser})`
-      center.appendChild(datangnama2) 
 
-      const anchorkur = document.createElement("a")
-      anchorkur.href = "www.google.com"
-      const imgkursi = document.createElement("img")
-      imgkursi.src = "./assets/kursi-1.jpg"
-      imgkursi.classList.add(`pilihfurnitur`)
-      anchorkur.appendChild(imgkursi)
-      center.appendChild(anchorkur)
+      const afterLoginDiv = document.getElementById('after-login');
 
-      const anchormej = document.createElement("a")
-      anchormej.href = "www.google.com"
-      const imgmeja = document.createElement("img")
-      imgmeja.src = "./assets/meja-1.jpg"
-      imgmeja.classList.add(`pilihfurnitur`)
-      anchormej.appendChild(imgmeja)
-      center.appendChild(anchormej)
-
-      const anchorkas = document.createElement("a")
-      anchorkas.href = "www.google.com"
-      const imgkasur = document.createElement("img")
-      imgkasur.src = "./assets/kasur-1.jpg"
-      imgkasur.classList.add(`pilihfurnitur`)
-      anchorkas.appendChild(imgkasur)
-      center.appendChild(anchorkas)
-
+      afterLoginDiv.classList.remove('hidden');
+      afterLoginDiv.getElementsByTagName('p')[0].innerHTML = `(dengan email: ${emailuser})`;
 
       sudahlogintadi = true
       
-    }else {
+    } else {
       document.getElementsByTagName("H4")[0].innerHTML = `Selamat datang ${namauser}!`
       document.getElementsByTagName("P")[1].innerHTML = `(dengan email: ${emailuser})`
     }

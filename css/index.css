@@ -21,7 +21,11 @@ body {
   height: 250px;
   margin-top: 35px;
   margin-right: 100px;
-  cursor: pointer
+  cursor: pointer;
+}
+
+#after-login.hidden {
+  display: none;
 }
 
 .logo {
