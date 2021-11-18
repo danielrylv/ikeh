@@ -1,0 +1,212 @@
+<html>
+
+<head>
+
+    <title>
+        Kursi
+    </title>
+    <style>
+        main {
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .judulutama {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .desainkiri {
+            float: left;
+            max-width: 500px;
+            height: auto;
+            margin-right: 100px;
+            margin-bottom: 10px
+        }
+
+        .desainkanan {
+            float: right;
+            max-width: 500px;
+            height: auto;
+            margin-left: 100px
+        }
+
+        .kanan {
+            text-align: right;
+
+        }
+
+        .judul {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .card {
+            padding : 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            overflow: auto;
+        }
+
+        .tombol {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px 30px;
+            text-align: center;
+            font-size: 30px;
+            display: inline-block;
+            transition-duration: 0.4s;
+            width: 100%;
+        }
+
+        .tombol:hover {
+            background-color: rgb(89, 42, 165);
+        }
+
+        .dropbtn {
+            padding: 30px 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 30px;
+            display: inline-block;
+            transition-duration: 0.4s;
+            overflow: auto;
+            width: 100%;
+            border: 2px solid rgb(89, 42, 165);
+            
+        }
+
+        .dropdown {
+            position: relative;
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: sticky;
+            text-align: center;
+            box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.2);
+            transition-duration: 0.4s;
+            overflow: auto;
+
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 19px 35px;
+            font-size: 30px;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+        background-color: rgb(89, 42, 165);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="judulutama">
+            Pilihan Kursi di Toko IKEH
+        </h1>
+
+        <div class="dropdown">
+            <a class="dropbtn"> Kursi </a>
+
+            <div class="dropdown-content">
+                <a href="#kursi 1"> Asgard </a>
+                <a href="#kursi 2"> Thor </a>
+                <a href="#kursi 3"> Wah </a>
+            </div>
+
+        </div>
+    </header>
+    <main>
+
+        <article id="kursi 1" class="card">
+            <h2 class="judul">
+                Kursi Asgard
+            </h2>
+            <img src="aset/kursi1.jpg" alt="kursi 1" class="desainkiri">
+            <p style=font-size:30px;>
+
+                Lorem ipsum dolor sit amet, <br>
+                consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
+                nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
+                nisi quis auctor. Vivamus tristique interdum ipsum in commodo. Curabitur ultricies placerat mauris
+                vitae <br>
+                tincidunt. Ut at varius massa. Vivamus et ligula volutpat, mollis sapien vitae, egestas est. Donec
+                fermentum neque id lectus<br>
+                volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
+                Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
+            </p>
+
+            <button class="tombol">
+                Customize Your Own
+            </button>
+
+        </article>
+
+        <article id="kursi 2" class="card">
+
+            <h2 class="judul">
+                Kursi Thor
+            </h2>
+            <img src="aset/kursi 2.jpg" alt="kursi 2" class="desainkanan">
+            <p style=font-size:30px; class="kanan">
+                Lorem ipsum dolor sit amet, <br>
+                consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
+                nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
+                nisi quis auctor. Vivamus tristique interdum ipsum in commodo. Curabitur ultricies placerat mauris
+                vitae <br>
+                tincidunt. Ut at varius massa. Vivamus et ligula volutpat, mollis sapien vitae, egestas est. Donec
+                fermentum neque id lectus<br>
+                volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
+                Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
+            </p>
+            <center>
+                <button class="tombol">
+                    Customize Your Own
+                </button>
+            </center>
+        </article>
+
+        <article id="kursi 3" class="card">
+
+            <h2 class="judul">
+                Kursi Wahh
+            </h2>
+            <img src="aset/kursi 3.jpg" alt="kursi 3" class="desainkiri">
+            <p style=font-size:30px;>
+                Lorem ipsum dolor sit amet, <br>
+                consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
+                nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
+                nisi quis auctor. Vivamus tristique interdum ipsum in commodo. Curabitur ultricies placerat mauris
+                vitae <br>
+                tincidunt. Ut at varius massa. Vivamus et ligula volutpat, mollis sapien vitae, egestas est. Donec
+                fermentum neque id lectus<br>
+                volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
+                Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
+            </p>
+            <center>
+                <button class="tombol">
+                    Customize Your Own
+                </button>
+            </center>
+        </article>
+
+    </main>
+</body>
+
+</html>
