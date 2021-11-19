@@ -5,7 +5,7 @@
   <title>IKEH</title>
   <link rel="stylesheet" href="css/customization.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/popup-simpan-order.css">
   <style>
     main {
       width: 80%;
@@ -131,17 +131,17 @@
             <h3 style="font-style: italic;">INPUT SIZE</h3>
             <label for="lebar"> <span style="font-style: italic; font-weight: bold;">Width (cm)</span></label>
             <br>
-            <input type="number" id="lebar">
+            <input type="number" id="lebar" value="100" min="1">
             <br>
             <label for="tinggi"><span style="font-style: italic; font-weight: bold;">Height (cm)</span></label>
             <br>
-            <input type="number" id="tinggi">
+            <input type="number" id="tinggi" value="100" min="1">
             <br>
             <label for="panjang"><span style="font-style: italic; font-weight: bold;">Length (cm)</span></label>
             <br>
-            <input type="number" id="panjang">
+            <input type="number" id="panjang" value="100" min="1">
             <br>
-            <label for="quantity">Jumlah Barang</label>
+            <label for="quantity" value="1" min="1">Jumlah Barang</label>
             <br>
             <input id="quantity" name="quantity" type="number" value="1" min="1" oninput="updatePrice()">
             <div id="price">
@@ -157,17 +157,16 @@
     <div id="material-picker-container">
       <h3 style="font-style: italic;">PICK YOUR MATERIAL</h3>
 
-      <section class="card-container">
-
-        <div class="card">
+      <section id="material-picker" class="card-container" data-value="mahoni">
+        <div id="material-jati" class="card" onclick="chooseMaterial('jati')">
           <div class="card-image material-jati"></div>
           <h3>Jati</h3>
         </div>
-        <div class="card">
+        <div id="material-mahoni" class="card card-chosen" onclick="chooseMaterial('mahoni')">
           <div class="card-image material-mahoni"></div>
           <h3>Mahoni</h3>
         </div>
-        <div class="card">
+        <div id="material-bambu" class="card" onclick="chooseMaterial('bambu')">
           <div class="card-image material-bambu"></div>
           <h3>Bambu</h3>
         </div>
@@ -176,11 +175,11 @@
         
     <div id="color-picker-container">
       <h3>PICK YOUR FAVOURITE COLOR</h3>
-      <div id="color-picker">
+      <div id="color-picker" data-value="forestgreen">
         <div id="color-dodgerblue" class="color-box" onclick="chooseColor('dodgerblue')"></div>
         <div id="color-deeppink" class="color-box" onclick="chooseColor('deeppink')"></div>
         <div id="color-gold" class="color-box" onclick="chooseColor('gold')"></div>
-        <div id="color-forestgreen" class="color-box" onclick="chooseColor('forestgreen')"></div>
+        <div id="color-forestgreen" class="color-box color-chosen" onclick="chooseColor('forestgreen')"></div>
         <div id="color-darkviolet" class="color-box" onclick="chooseColor('darkviolet')"></div>
         <div id="color-lightseagreen" class="color-box" onclick="chooseColor('lightseagreen')"></div>
         <div id="color-lawngreen" class="color-box" onclick="chooseColor('lawngreen')"></div>
@@ -190,7 +189,8 @@
       <button onclick="showOrderPopup()">Simpan Pesanan</button>
     </div>
   </main>
-  <script src="js/color-picker.js"></script>
+  <script src="js/picker-material.js"></script>
+  <script src="js/picker-color.js"></script>
   <script src="js/order.js"></script>
   <script src="js/common.js"></script>
   <script>
