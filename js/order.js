@@ -4,7 +4,7 @@ function proceedOrder() {
   const type = params.get('type');
   const model = params.get('model');
 
-  orders.push({
+  orders.unshift({
     type,
     model,
     width: getNumberInput('lebar'),
