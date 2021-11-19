@@ -9,15 +9,13 @@ function proceedOrder() {
     model,
     width: getNumberInput('lebar'),
     height: getNumberInput('tinggi'),
-    wood: 1,
+    material: getChosenMaterial(),
     color: getChosenColor(),
     quantity: getNumberInput('quantity'),
     price: calculatePrice()
   });
 
   saveOrders(orders);
-
-  displayCurrentOrders();
 }
 
 function getCurrentOrders() {
@@ -34,30 +32,8 @@ function saveOrders(orders) {
   window.localStorage.setItem('orders', JSON.stringify(orders));
 }
 
-function displayCurrentOrders() {
-  const orders = getCurrentOrders();
-
-  const currentOrdersDiv = document.getElementById('current-orders');
-
-  currentOrdersDiv.innerHTML = '';
-
-  for (let i = 0; i < orders.length; i++) {
-    const div = document.createElement('div');
-
-    div.innerHTML = JSON.stringify(orders[i]);
-
-    currentOrdersDiv.appendChild(div);
-  }
-}
-
 function getNumberInput(id) {
   return Number(document.getElementById(id).value);
-}
-
-function clearOrders() {
-  window.localStorage.clear();
-
-  displayCurrentOrders();
 }
 
 function formatPrice(num) {

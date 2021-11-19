@@ -157,17 +157,16 @@
     <div id="material-picker-container">
       <h3 style="font-style: italic;">PICK YOUR MATERIAL</h3>
 
-      <section class="card-container">
-
-        <div class="card">
+      <section id="material-picker" class="card-container" data-value="mahoni">
+        <div id="material-jati" class="card" onclick="chooseMaterial('jati')">
           <div class="card-image material-jati"></div>
           <h3>Jati</h3>
         </div>
-        <div class="card">
+        <div id="material-mahoni" class="card card-chosen" onclick="chooseMaterial('mahoni')">
           <div class="card-image material-mahoni"></div>
           <h3>Mahoni</h3>
         </div>
-        <div class="card">
+        <div id="material-bambu" class="card" onclick="chooseMaterial('bambu')">
           <div class="card-image material-bambu"></div>
           <h3>Bambu</h3>
         </div>
@@ -190,7 +189,8 @@
       <button onclick="showOrderPopup()">Simpan Pesanan</button>
     </div>
   </main>
-  <script src="js/color-picker.js"></script>
+  <script src="js/picker-material.js"></script>
+  <script src="js/picker-color.js"></script>
   <script src="js/order.js"></script>
   <script src="js/common.js"></script>
   <script>
