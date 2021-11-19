@@ -132,11 +132,11 @@
       <div class="containerKiri">
         <img src="assets/{{type}}-{{model}}.jpg" alt="{{type}}" class="imgThumbnail">
 
-        <p><span class="fontBig capitalize">{{type}}</span>, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit dolorem
+        <p><span class="fontBig capitalize">{{type}} {{model}}</span>. <span id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit dolorem
           fugit architecto sapiente, odit reiciendis veniam dolor cupiditate vitae optio quae esse veritatis a
           voluptatem reprehenderit possimus eveniet non eos.
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos reiciendis aliquid in voluptate culpa laudantium
-          numquam
+          numquam</span>
         </p>
 
       </div>
@@ -224,6 +224,14 @@
     const model = params.get('model');
 
     renderTemplates({type, model});
+
+    const descriptions = {
+      duar: `Dibuat menggunakan material berkualitas dengan proses pengerjaan yang detail, menghasilkan produk yang tahan lama dan nyaman digunakan. Desainnya minimalis yang cocok dipadukan dengan berbagai tema.`,
+      asik: `Produk sejuta umat, yang memang sudah terbukti kualitas kenyamananya. Desainya yang modern dan sudah pasti nyaman, ngapain cari yang lain lagi.`,
+      darius: `Desainnya yang ergonomis dan minimalis cocok untuk ruangan dengan konsep modern minimalis. Terbuat dari material yang berkualitas, membuat produk ini kokoh sehingga lebih awet dan tahan lama.`
+    };
+
+    document.getElementById('description').innerHTML = descriptions[model];
   </script>
   <script>
     updatePrice();
