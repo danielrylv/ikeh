@@ -141,6 +141,7 @@ display: -webkit-box;
        line-clamp: 5; 
 -webkit-box-orient: vertical;
 }
+
 .invisible {
   visibility: hidden;
 }
