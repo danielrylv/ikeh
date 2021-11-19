@@ -35,11 +35,6 @@ checkLoginForm.addEventListener('submit', function(event) {
   }
 });
 
-function logout() {
-  window.localStorage.clear();
-  location.reload();
-}
-
 function handleLoggedInDisplay() {
   document.getElementById('checkLogin').classList.add('invisible');
   document.querySelector('.banner').removeChild(document.querySelector('#mohonlogin'));
@@ -51,24 +46,4 @@ function handleLoggedInDisplay() {
   afterLoginDiv.classList.remove('hidden');
   afterLoginDiv.getElementsByTagName("H4")[0].innerHTML = `Selamat datang ${loginInfo.name}!`;
   afterLoginDiv.getElementsByTagName('p')[0].innerHTML = `(dengan email: ${loginInfo.email})`;
-}
-
-function saveLoginInfo(name, email) {
-  window.localStorage.setItem('login.name', name);
-  window.localStorage.setItem('login.email', email);
-}
-
-function getLoginInfo() {
-  let result = null;
-
-  const email = window.localStorage.getItem('login.email');
-
-  if (email) {
-    result = {
-      name: window.localStorage.getItem('login.name'),
-      email
-    }
-  }
-
-  return result;
 }
