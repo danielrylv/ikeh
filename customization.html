@@ -6,10 +6,14 @@
   <link rel="stylesheet" href="css/customization.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/popup-simpan-order.css">
+  <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Tangerine&display=swap"
+      rel="stylesheet"
+    />
   <style>
     main {
-      width: 80%;
-      margin: auto;
+      max-width: 70%;
+      margin: 30px auto;
     }
 
     #color-picker-container h3 {
@@ -97,10 +101,31 @@
     #color-lawngreen {
       background-color: lawngreen;
     }
+    
+    body {
+      background-image: linear-gradient(134deg, rgba(1, 1, 1, 0.02) 0%, rgba(1, 1, 1, 0.02) 16%, transparent 16%, transparent 76%, rgba(58, 58, 58, 0.02) 76%, rgba(58, 58, 58, 0.02) 100%), linear-gradient(215deg, rgba(166, 166, 166, 0.02) 0%, rgba(166, 166, 166, 0.02) 33%, transparent 33%, transparent 79%, rgba(111, 111, 111, 0.02) 79%, rgba(111, 111, 111, 0.02) 100%), linear-gradient(303deg, rgba(215, 215, 215, 0.02) 0%, rgba(215, 215, 215, 0.02) 7%, transparent 7%, transparent 90%, rgba(192, 192, 192, 0.02) 90%, rgba(192, 192, 192, 0.02) 100%), linear-gradient(302deg, rgba(113, 113, 113, 0.02) 0%, rgba(113, 113, 113, 0.02) 34%, transparent 34%, transparent 73%, rgba(65, 65, 65, 0.02) 73%, rgba(65, 65, 65, 0.02) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+      font-family: 'El Messiri', narrow;
+      justify-content: center
+    }
+    .banner {
+      margin: auto;
+      width: 70%;
+      border: 0px solid rgb(200, 235, 255);
+      padding: 10px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
 <body>
+  <div class="banner">
+    <img src="./assets/2560px.png" alt="logo ikeh" class="logo">
+    </div>
   <main>
     <h1 class="tulisanTengah">Furniture</h1>
     <div class="containerAtas">
@@ -119,16 +144,16 @@
       <div class="containerKanan">
         <div class="isiContainerKanan">
           <form>
-            <h3 style="font-style: italic;">INPUT SIZE</h3>
-            <label for="panjang"><span style="font-style: italic; font-weight: bold;">Length (cm)</span></label>
+            <h3>INPUT SIZE</h3>
+            <label for="panjang"><span style="font-weight: bold;">Length (cm)</span></label>
             <br>
             <input type="number" id="panjang" value="100" min="1">
             <br>
-            <label for="lebar"> <span style="font-style: italic; font-weight: bold;">Width (cm)</span></label>
+            <label for="lebar"> <span style="font-weight: bold;">Width (cm)</span></label>
             <br>
             <input type="number" id="lebar" value="100" min="1">
             <br>
-            <label for="tinggi"><span style="font-style: italic; font-weight: bold;">Height (cm)</span></label>
+            <label for="tinggi"><span style="font-weight: bold;">Height (cm)</span></label>
             <br>
             <input type="number" id="tinggi" value="100" min="1">
             <br>
@@ -146,7 +171,7 @@
     <br>
     
     <div id="material-picker-container">
-      <h3 style="font-style: italic;">PICK YOUR MATERIAL</h3>
+      <h3>PICK YOUR MATERIAL</h3>
 
       <section id="material-picker" class="card-container" data-value="mahoni">
         <div id="material-jati" class="card" onclick="chooseMaterial('jati')">
