@@ -4,112 +4,9 @@
 <head>
   <title>IKEH</title>
   <link rel="stylesheet" href="css/common.css">
-  <style>
-    main {
-      background-color: white;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .judulutama {
-      text-align: center;
-      font-size: 50px;
-    }
-
-    .desainkiri {
-      float: left;
-      max-width: 500px;
-      height: auto;
-      margin-right: 100px;
-      margin-bottom: 10px
-    }
-
-    .desainkanan {
-      float: right;
-      max-width: 500px;
-      height: auto;
-      margin-left: 100px
-    }
-
-    .kanan {
-      text-align: right;
-    }
-
-    .judul {
-      text-align: center;
-      font-size: 50px;
-    }
-
-    .card {
-      margin: 40px;
-      overflow: auto;
-    }
-
-    .tombol {
-      background-color: white;
-      border-radius: 20px;
-      padding: 30px 30px;
-      text-align: center;
-      font-size: 30px;
-      display: inline-block;
-      transition-duration: 0.4s;
-      width: 100%;
-    }
-
-    .tombol:hover {
-      background-color: rgb(89, 42, 165);
-    }
-
-    .dropbtn {
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      font-size: 30px;
-      display: block;
-      transition-duration: 0.4s;
-      padding-right: 0px;
-      width: 100%;
-      border: 2px solid rgb(89, 42, 165);
-    }
-
-    .dropdown {
-
-      display: block;
-      margin-left: 50px;
-      margin-right: 70px;
-    }
-
-    .dropdown-content {
-      display: none;
-      text-align: center;
-      box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.2);
-      margin-right: 50px;
-      margin-left: 50px;
-
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 19px 35px;
-      font-size: 30px;
-      text-align: center;
-      display: inline-block;
-      position: relative;
-
-    }
-
-    .dropdown-content a:hover {
-      background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-      background-color: rgb(89, 42, 165);
-    }
-  </style>
+  <link rel="stylesheet" href="css/furniture.css">
 </head>
+
 <body>
   <header>
     <h1 class="judulutama capitalize">{{type}}</h1>
@@ -123,37 +20,43 @@
     </div>
   </header>
   <main>
-    <article id="model-duar" class="card">
+ <div class = "columns">
+      <article id="model-duar" class="sidebar-first">
       <h2 class="judul capitalize">
         {{type}} Duar
       </h2>
       <img src="assets/{{type}}-duar.jpg" alt="{{type]}} 1" class="desainkiri">
-      <p style=font-size:30px>
 
+      <center>
+      <p style=font-size:30px class="text">       
         Lorem ipsum dolor sit amet, <br>
-        consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
+        consectetur adipiscing elit.<br> Suspendisse vehicula felis lorem, <br>
         nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
-        nisi quis auctor. Vivamus tristique interdum ipsum in commodo. Curabitur ultricies placerat mauris
+        nisi quis auctor. <br>Vivamus tristique interdum ipsum in commodo. Curabitur ultricies placerat mauris
         vitae <br>
         tincidunt. Ut at varius massa. Vivamus et ligula volutpat, mollis sapien vitae, egestas est. Donec
         fermentum neque id lectus<br>
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
-        Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
+        Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.     
       </p>
-      <a id="Linkkursi1" href="customization.html?type={{type}}&model=duar">
+    </center>
+    
+      <a href="customization.html?type={{type}}&model=duar">
         <button class="tombol">
           Customize Your Own
         </button>
       </a>
     </article>
 
-    <article id="model-asik" class="card">
+    <article id="model-asik" class="sidebar-second" >
 
       <h2 class="judul capitalize">
         {{type}} Asik
       </h2>
-      <img src="assets/{{type}}-asik.jpg" alt="{{type]}} 2" class="desainkanan">
-      <p style=font-size:30px class="kanan">
+      <img src="assets/{{type}}-asik.jpg" alt="{{type]}} 2" class="desainkiri">
+    
+        <center>
+      <p style=font-size:30px class="text">
         Lorem ipsum dolor sit amet, <br>
         consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
         nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
@@ -164,6 +67,8 @@
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
         Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
       </p>
+      </center>
+      
       <a href="customization.html?type={{type}}&model=asik">
         <button class="tombol">
           Customize Your Own
@@ -171,12 +76,14 @@
       </a>
     </article>
 
-    <article id="model-darius" class="card">
+    <article id="model-darius" class="sidebar-secondd">
       <h2 class="judul capitalize">
         {{type}} Darius
       </h2>
-      <img src="assets/{{type}}-darius.jpg" alt="{{type]}} 3" class="desainkiri" style="margin-bottom: 100px">
-      <p style=font-size:30px>
+      <img src="assets/{{type}}-darius.jpg" alt="{{type]}} 3" class="desainkiri">
+
+      <center>
+      <p style=font-size:30px class="text">
         Lorem ipsum dolor sit amet, <br>
         consectetur adipiscing elit. Suspendisse vehicula felis lorem, <br>
         nec ultricies sapien vestibulum eu. In posuere pellentesque<br>
@@ -187,13 +94,15 @@
         volutpat elementum. Phasellus finibus rutrum ornare. Cras eget molestie urna, ut sagittis orci. <br>
         Ut cursus commodo leo nec rutrum. Vestibulum ornare sed elit ut consequat.
       </p>
+      </center>
+
       <a href="customization.html?type={{type}}&model=darius">
         <button class="tombol">
           Customize Your Own
         </button>
       </a>
     </article>
-
+</div>
   </main>
   <script src="js/common.js"></script>
   <script>

@@ -44,11 +44,26 @@ body {
 
 .bannerimg {
   margin-top: 80px;
-  margin-right: 20px;
+  margin-right: 50px;
   width: 450px;
   height: 400px;
   float: right;
   box-shadow: 15px 10px 10px #727272
+}
+
+.tocart {
+  float: right;
+  margin-left: 0px;
+}
+
+.indextocart {
+  border-radius: 25px;
+  padding: 15px;
+  background-color: #1d6fcc;
+  outline: none;
+  color: #ebf4ff;
+  cursor: pointer;
+  float: right
 }
 
 .full {
