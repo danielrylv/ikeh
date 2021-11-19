@@ -3,18 +3,24 @@
 <head>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/popup-hapus-order.css">
+  
   <style>
     main {
       width: 60%;
       margin: 30px auto;
+      font-family:'Source Sans Pro', sans-serif;;
+     
     }
 
     #orders-list > div {
       margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
     }
 
     .order-item {
       display: inline-block;
+      
     }
 
     .order-item h2 {
@@ -30,18 +36,22 @@
     img.material, .color-box {
       width: 100px;
       height: 100px;
+      border-radius: 10px;
     }
 
     .item-body {
       display: flex;
+      
     }
 
     .column-2 {
       margin-left: 20px;
+      margin-top: 50px;
     }
 
     .column-2 > div:nth-child(2) {
       margin: 15px 0;
+      
     }
 
     .row-1 {
@@ -69,6 +79,16 @@
       display: flex;
       justify-content: space-between;
     }
+
+    #tmp-delete{
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #1d6fcc;
+      outline: none;
+      color: #ebf4ff;
+      cursor: pointer
+    }
+
   </style>
 </head>
 <body>
@@ -84,9 +104,10 @@
   <main>
     <div id="orders-list">
       <div id="tmp-order" class="order-item">
-        <h2>Kursi Duar</h2>
+        
         <div class="item-body">
           <div>
+            <h2>Kursi Duar</h2>
             <img class="furniture" src="assets/kursi-duar.jpg">
           </div>
           <div class="column-2">
