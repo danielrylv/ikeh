@@ -2,7 +2,6 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/popup-hapus-order.css">
   <script src="https://kit.fontawesome.com/296c028d74.js" crossorigin="anonymous"></script>
   <style>
     nav {
@@ -155,6 +154,71 @@
       transition: background-color .15s ease-in-out;
       flex: 1 0 auto;
     }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .popup-wrapper {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-wrapper.hidden {
+      display: none;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      opacity: 0.6;
+      position: absolute;
+      z-index: 4;
+    }
+
+    .popup-box {
+      width: 300px;
+      background-color: white;
+      border-radius: 15px;
+      position: relative;
+      z-index: 5;
+      font-size: 1.1em;
+    }
+
+    .popup-text {
+      width: 100%;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .popup-button-wrapper {
+      width: 100%;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .popup-button-wrapper > button {
+      padding: 10px 20px;
+      background-color: darkturquoise;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .popup-button-wrapper > button:hover {
+      background-color: #00babd;
+    }
+
+    #checkout-after-confirmation img {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -208,11 +272,40 @@
         <span id="checkout-price">Rp50.000.000</span>
       </div>
       <div>
-        <button id="checkout-button">Checkout</button>
+        <button id="checkout-button" onclick="initiateCheckout()">CHECKOUT</button>
       </div>
     </div>
   </main>
-  <div id="order-popup" class="popup-wrapper hide">
+  <div id="order-popup" class="popup-wrapper hidden">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">Are you sure deleting this order?</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleDeletePopupClick()">Yes, please!</button>
+      </div>
+    </div>
+  </div>
+  <div id="checkout-popup" class="popup-wrapper hidden">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div id="checkout-before-confirmation">
+        <div class="popup-text">Are you sure to checkout now?</div>
+        <div class="popup-button-wrapper">
+          <button onclick="handleCheckoutClick()">Go go go!</button>
+        </div>
+      </div>
+      <div id="checkout-after-confirmation" class="popup-text hidden">
+        <div>
+          <span>Thank you for purchase!</span>
+          <i class="fas fa-check" style="font-weight: bold; color: green"></i>
+        </div>
+        <div>
+          <img src="assets/loading.gif">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="order-popup" class="popup-wrapper hidden">
     <div class="overlay"></div>
     <div class="popup-box">
       <div class="popup-text">Are you sure deleting this order?</div>
@@ -226,12 +319,12 @@
     let deleteOrderIndex = -1;
 
     function initiateOrderDeletion(index) {
-      document.getElementById('order-popup').classList.remove('hide');
+      document.getElementById('order-popup').classList.remove('hidden');
       deleteOrderIndex = index;
     }
 
     function handleDeletePopupClick() {
-      document.getElementById('order-popup').classList.add('hide');
+      document.getElementById('order-popup').classList.add('hidden');
       deleteOrder(deleteOrderIndex);
     }
   </script>
@@ -324,6 +417,22 @@
 
       saveOrders(newOrders);
       renderOrders();
+    }
+  </script>
+  <script>
+    function initiateCheckout() {
+      document.getElementById('checkout-popup').classList.remove('hidden');
+    }
+
+    function handleCheckoutClick() {
+      clearOrders();
+
+      document.getElementById('checkout-before-confirmation').classList.add('hidden');
+      document.getElementById('checkout-after-confirmation').classList.remove('hidden');
+
+      setInterval(function() {
+        location.href = 'index.html';
+      }, 2000);
     }
   </script>
 </body>

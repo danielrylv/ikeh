@@ -57,3 +57,7 @@ function calculatePrice() {
 
   return getNumberInput('quantity') * BASE_PRICE;
 }
+
+function clearOrders() {
+  window.localStorage.removeItem('orders');
+}
