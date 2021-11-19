@@ -4,9 +4,10 @@ function proceedOrder() {
   const type = params.get('type');
   const model = params.get('model');
 
-  orders.push({
+  orders.unshift({
     type,
     model,
+    length: getNumberInput('panjang'),
     width: getNumberInput('lebar'),
     height: getNumberInput('tinggi'),
     material: getChosenMaterial(),

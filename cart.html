@@ -3,28 +3,75 @@
 <head>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/popup-hapus-order.css">
+  <script src="https://kit.fontawesome.com/296c028d74.js" crossorigin="anonymous"></script>
   <style>
-    main {
-      width: 60%;
+    nav {
+      max-width: 600px;
       margin: 30px auto;
     }
 
-    #orders-list > div {
-      margin-bottom: 30px;
+    nav > a {
+      color: grey;
+      text-decoration: none;      
+      font-size: 1.02em;
+      transition: color 0.15s ease;
     }
 
-    .order-item {
-      display: inline-block;
+    nav > a:hover {
+      color: #333;
+      cursor: pointer;
     }
 
-    .order-item h2 {
+    nav > a > * {
+      margin-right: 10px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    
+    .order-header {
+      display: flex;
+      margin-bottom: 25px;
+      padding-top: 25px;
+      padding-bottom: 5px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid lightgrey;
+    }
+
+    .order-header h2 {
       width: 200px;
+      margin: 0;
+      padding-left: 30px;
       text-align: center;
+    }
+
+    .order-header > button {
+      display: inline-block;
+      padding: 5px 25px;
+      background-color: transparent;
+      border: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: indianred;
+      transition: color 0.15s ease;
+    }
+
+    .order-header > button:hover {
+      color: firebrick;
+    }
+
+    #orders-list > div {
+      margin-bottom: 25px;
     }
 
     img.furniture {
       width: 200px;
       height: 200px;
+      margin-left: 30px;
+      padding-right: 30px;
     }
 
     img.material, .color-box {
@@ -37,11 +84,11 @@
     }
 
     .column-2 {
-      margin-left: 20px;
+      margin-left: 30px;
     }
 
     .column-2 > div:nth-child(2) {
-      margin: 15px 0;
+      margin: 25px 0;
     }
 
     .row-1 {
@@ -59,10 +106,11 @@
 
     .row-2 {
       display: flex;
+      justify-content: center;
     }
 
     .row-2 > div {
-      margin: 0 30px;
+      margin: 0 7px;
     }
 
     .row-3 {
@@ -72,22 +120,22 @@
   </style>
 </head>
 <body>
-  <div id="order-popup" class="popup-wrapper hide">
-    <div class="overlay"></div>
-    <div class="popup-box">
-      <div class="popup-text">Are you sure deleting this order?</div>
-      <div class="popup-button-wrapper">
-        <button onclick="handleDeletePopupClick()">Yes, please!</button>
-      </div>
-    </div>
-  </div>
+  <nav>
+    <a href="index.html">
+      <i class="fas fa-arrow-left"></i>
+      <span>halaman utama</span>
+    </a>
+  </nav>
   <main>
     <div id="orders-list">
       <div id="tmp-order" class="order-item">
-        <h2>Kursi Duar</h2>
+        <div class="order-header">
+          <h2 id="tmp-furniture" class="capitalize">Kursi Duar</h2>
+          <button id="tmp-delete" onclick="initiateOrderDeletion(-1)">Hapus</button>
+        </div>
         <div class="item-body">
           <div>
-            <img class="furniture" src="assets/kursi-duar.jpg">
+            <img id="tmp-item-image" class="furniture" src="assets/kursi-duar.jpg">
           </div>
           <div class="column-2">
             <div class="row-1">
@@ -111,13 +159,21 @@
             <div class="row-3">
               <div>Jumlah: <span id="tmp-quantity">11</span></div>  
               <div id="tmp-price">Harga: Rp2.000.000</div>
-              <button id="tmp-delete" onclick="initiateOrderDeletion(-1)">Hapus</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">Are you sure deleting this order?</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleDeletePopupClick()">Yes, please!</button>
+      </div>
+    </div>
+  </div>
   <script src="js/order.js"></script>
   <script>
     let deleteOrderIndex = -1;
@@ -143,9 +199,11 @@
 
     function createOrderItemElement(index, order) {
       const newElement = orderItemTemplate.cloneNode(true);
+      const furnitureElement = newElement.querySelector('#tmp-furniture');
+      const itemImageElement = newElement.querySelector('#tmp-item-image');
+      const lengthElement = newElement.querySelector('#tmp-length');
       const widthElement = newElement.querySelector('#tmp-width');
       const heightElement = newElement.querySelector('#tmp-height');
-      const lengthElement = newElement.querySelector('#tmp-length');
       const materialElement = newElement.querySelector('#tmp-material');
       const colorElement = newElement.querySelector('#tmp-color');
       const quantityElement = newElement.querySelector('#tmp-quantity');
@@ -153,17 +211,20 @@
       const deleteElement = newElement.querySelector('#tmp-delete');
 
       newElement.setAttribute('id', `order-${index}`);
+      furnitureElement.innerHTML = `${order.type} ${order.model}`;
+      itemImageElement.src = `assets/${order.type}-${order.model}.jpg`;
+      lengthElement.innerHTML = order.length;
       widthElement.innerHTML = order.width;
       heightElement.innerHTML = order.height;
-      lengthElement.innerHTML = order.length;
       materialElement.src = `assets/material-${order.material}.jpg`;
       colorElement.style.backgroundColor = order.color;
       quantityElement.innerHTML = order.quantity;
       priceElement.innerHTML = formatPrice(order.price);
       deleteElement.onclick = () => initiateOrderDeletion(index);
 
-      widthElement.removeAttribute('id');
       lengthElement.removeAttribute('id');
+      widthElement.removeAttribute('id');
+      heightElement.removeAttribute('id');
       materialElement.removeAttribute('id');
       colorElement.removeAttribute('id');
       quantityElement.removeAttribute('id');
