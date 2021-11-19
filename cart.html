@@ -338,7 +338,14 @@
       </div>
       <div id="checkout-after-confirmation" class="popup-text hidden">
         <div>
-          <span>Thank you for purchase!</span>
+          <span>
+            Thank you <b><span id="user-name"></span></b>
+            for purchase! 
+            <br>
+            Copy of invoice is sent to 
+            <b><span id="user-email"></span></b>.
+          </span>
+          <br>
           <i class="fas fa-check" style="font-weight: bold; color: green"></i>
         </div>
         <div>
@@ -348,6 +355,7 @@
     </div>
   </div>
   <script src="js/order.js"></script>
+  <script src="js/account.js"></script>
   <script>
     let deleteOrderIndex = -1;
 
@@ -453,6 +461,8 @@
     }
 
     function handleCheckoutClick() {
+      displayLoginInfo();
+
       clearOrders();
 
       document.getElementById('checkout-before-confirmation').classList.add('hidden');
@@ -460,7 +470,16 @@
 
       setInterval(function() {
         location.href = 'index.html';
-      }, 2000);
+      }, 3000);
+    }
+
+    function displayLoginInfo() {
+      const loginInfo = getLoginInfo();
+
+      document.getElementById('user-name')
+        .innerHTML = loginInfo.name;
+      document.getElementById('user-email')
+        .innerHTML = loginInfo.email;
     }
   </script>
 </body>
