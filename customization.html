@@ -101,15 +101,6 @@
 </head>
 
 <body>
-  <div id="order-popup" class="popup-wrapper hide">
-    <div class="overlay"></div>
-    <div class="popup-box">
-      <div class="popup-text">You have made an order!</div>
-      <div class="popup-button-wrapper">
-        <button onclick="handleOrderPopupClick()">Yes, great!</button>
-      </div>
-    </div>
-  </div>
   <main>
     <h1 class="tulisanTengah">Furniture</h1>
     <div class="containerAtas">
@@ -189,6 +180,15 @@
       <button onclick="showOrderPopup()">Simpan Pesanan</button>
     </div>
   </main>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">You have made an order!</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleOrderPopupClick()">Yes, great!</button>
+      </div>
+    </div>
+  </div>
   <script src="js/picker-material.js"></script>
   <script src="js/picker-color.js"></script>
   <script src="js/order.js"></script>
