@@ -10,7 +10,46 @@
       href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Tangerine&display=swap"
       rel="stylesheet"
     />
+  <script src="https://kit.fontawesome.com/296c028d74.js" crossorigin="anonymous"></script>
   <style>
+        .banner {
+      margin: auto;
+      width: 100%;
+      border: 0px solid rgb(200, 235, 255);
+      padding: 50px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 40px;
+      margin-bottom: 0px;
+    }
+
+    nav {
+      position: absolute;
+      top: 60px;
+      left: 100px;
+    }
+
+    nav > a {
+      color: grey;
+      text-decoration: none;
+      font-size: 1.02em;
+      transition: color 0.15s ease;
+    }
+
+    nav > a:hover {
+      color: #333;
+      cursor: pointer;
+    }
+
+    nav > a > * {
+      margin-right: 10px;
+    }
+
     main {
       max-width: 70%;
       margin: 30px auto;
@@ -123,9 +162,17 @@
 </head>
 
 <body>
-  <div class="banner">
-    <img src="./assets/2560px.png" alt="logo ikeh" class="logo">
+  <div>
+    <nav>
+      <a href="index.html">
+        <i class="fas fa-arrow-left"></i>
+        <span>halaman utama</span>
+      </a>
+    </nav>
+    <div class="banner">
+      <img src="./assets/2560px.png" alt="logo ikeh" class= "logo">
     </div>
+  </div>
   <main>
     <h1 class="tulisanTengah">Furniture</h1>
     <div class="containerAtas">
