@@ -282,9 +282,9 @@
     }
   </script>
   <script>
-    renderOrderList();
+    renderOrders();
 
-    function renderOrderList() {
+    function renderOrders() {
       const orders = getCurrentOrders();
 
       if (orders.length == 0) {
@@ -297,6 +297,14 @@
       for (let i = 0; i < orders.length; i++) {
         container.appendChild(createOrderItemElement(i, orders[i]));
       }
+
+      let totalPrice = 0;
+
+      for (let order of orders) {
+        totalPrice += order.price;
+      }
+
+      document.getElementById('checkout-price').innerHTML = formatPrice(totalPrice);
     }
 
     function deleteOrder(index) {
@@ -315,7 +323,7 @@
       }
 
       saveOrders(newOrders);
-      renderOrderList();
+      renderOrders();
     }
   </script>
 </body>
