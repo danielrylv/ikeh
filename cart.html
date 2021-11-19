@@ -84,10 +84,10 @@
   <main>
     <div id="orders-list">
       <div id="tmp-order" class="order-item">
-        <h2>Kursi Duar</h2>
+        <h2 id="tmp-furniture" class="capitalize">Kursi Duar</h2>
         <div class="item-body">
           <div>
-            <img class="furniture" src="assets/kursi-duar.jpg">
+            <img id="tmp-item-image" class="furniture" src="assets/kursi-duar.jpg">
           </div>
           <div class="column-2">
             <div class="row-1">
@@ -143,6 +143,8 @@
 
     function createOrderItemElement(index, order) {
       const newElement = orderItemTemplate.cloneNode(true);
+      const furnitureElement = newElement.querySelector('#tmp-furniture');
+      const itemImageElement = newElement.querySelector('#tmp-item-image');
       const widthElement = newElement.querySelector('#tmp-width');
       const heightElement = newElement.querySelector('#tmp-height');
       const lengthElement = newElement.querySelector('#tmp-length');
@@ -153,6 +155,8 @@
       const deleteElement = newElement.querySelector('#tmp-delete');
 
       newElement.setAttribute('id', `order-${index}`);
+      furnitureElement.innerHTML = `${order.type} ${order.model}`;
+      itemImageElement.src = `assets/${order.type}-${order.model}.jpg`;
       widthElement.innerHTML = order.width;
       heightElement.innerHTML = order.height;
       lengthElement.innerHTML = order.length;
