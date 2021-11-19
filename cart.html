@@ -12,7 +12,8 @@
     .order-header {
       display: flex;
       margin-bottom: 25px;
-      padding: 11px 0;
+      padding-top: 25px;
+      padding-bottom: 5px;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid lightgrey;
@@ -97,15 +98,6 @@
   </style>
 </head>
 <body>
-  <div id="order-popup" class="popup-wrapper hide">
-    <div class="overlay"></div>
-    <div class="popup-box">
-      <div class="popup-text">Are you sure deleting this order?</div>
-      <div class="popup-button-wrapper">
-        <button onclick="handleDeletePopupClick()">Yes, please!</button>
-      </div>
-    </div>
-  </div>
   <main>
     <div id="orders-list">
       <div id="tmp-order" class="order-item">
@@ -145,6 +137,15 @@
       </div>
     </div>
   </main>
+  <div id="order-popup" class="popup-wrapper hide">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">Are you sure deleting this order?</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleDeletePopupClick()">Yes, please!</button>
+      </div>
+    </div>
+  </div>
   <script src="js/order.js"></script>
   <script>
     let deleteOrderIndex = -1;
