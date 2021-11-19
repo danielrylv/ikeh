@@ -5,26 +5,56 @@
   <title>IKEH</title>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/furniture.css">
+  <link href="https://fonts.googleapis.com/css2?family=Khand:wght@500&display=swap" rel="stylesheet"> 
+  <script src="https://kit.fontawesome.com/296c028d74.js" crossorigin="anonymous"></script>
   <style>
-    
     .banner {
       margin: auto;
-      width: 70%;
+      width: 100%;
       border: 0px solid rgb(200, 235, 255);
-      padding: 120px;
+      padding: 50px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo {
-      width: 160px;
-      height: 80px;
+      width: 80px;
+      height: 40px;
       margin-bottom: 0px;
+    }
+
+    nav {
+      position: absolute;
+      top: 60px;
+      left: 100px;
+    }
+
+    nav > a {
+      color: grey;
+      text-decoration: none;
+      font-size: 1.02em;
+      transition: color 0.15s ease;
+    }
+
+    nav > a:hover {
+      color: #333;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
-  <div class="banner">
-  <img src="./assets/2560px.png" alt="logo ikeh" class= "logo">
+  <div>
+    <nav>
+      <a href="index.html">
+        <i class="fas fa-arrow-left"></i>
+        <span>halaman utama</span>
+      </a>
+    </nav>
+    <div class="banner">
+      <img src="./assets/2560px.png" alt="logo ikeh" class= "logo">
+    </div>
   </div>
   <main>
  <div class = "columns">
@@ -35,7 +65,7 @@
       <img src="assets/{{type}}-duar.jpg" alt="{{type]}} 1" class="desainkiri">
 
       <center>
-      <p style=font-size:30px class="text">       
+      <p class="text">       
            
         Dibuat menggunakan material <br> berkualitas dengan
          proses <br>pengerjaan yang detail, <br>menghasilkan produk yang 
@@ -60,7 +90,7 @@
       <img src="assets/{{type}}-asik.jpg" alt="{{type]}} 2" class="desainkiri">
     
         <center>
-      <p style=font-size:30px class="text">
+      <p class="text">
         Produk sejuta umat, yang memang <br>sudah terbukti
          kualitas <br>kenyamananya. Desainya yang <br>modern dan 
          sudah pasti nyaman, <br>ngapain cari yang lain lagi.
@@ -82,7 +112,7 @@
       <img src="assets/{{type}}-darius.jpg" alt="{{type]}} 3" class="desainkiri">
 
       <center>
-      <p style=font-size:30px class="text">
+      <p class="text">
         Desainnya yang ergonomis dan <br>
         minimalis cocok untuk ruangan <br>
         dengan konsep modern minimalis. <br>

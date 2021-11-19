@@ -1,6 +1,7 @@
 main {
   background-color: white;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Khand', sans-serif; 
   display: flex;
   flex: 1;
   text-align: center;
@@ -9,27 +10,26 @@ main {
 
 body {
   background-image: linear-gradient(134deg, rgba(196, 96, 96, 0.02) 0%, rgba(1, 1, 1, 0.02) 16%, transparent 16%, transparent 76%, rgba(58, 58, 58, 0.02) 76%, rgba(58, 58, 58, 0.02) 100%), linear-gradient(215deg, rgba(166, 166, 166, 0.02) 0%, rgba(166, 166, 166, 0.02) 33%, transparent 33%, transparent 79%, rgba(111, 111, 111, 0.02) 79%, rgba(111, 111, 111, 0.02) 100%), linear-gradient(303deg, rgba(215, 215, 215, 0.02) 0%, rgba(215, 215, 215, 0.02) 7%, transparent 7%, transparent 90%, rgba(192, 192, 192, 0.02) 90%, rgba(192, 192, 192, 0.02) 100%), linear-gradient(302deg, rgba(113, 113, 113, 0.02) 0%, rgba(113, 113, 113, 0.02) 34%, transparent 34%, transparent 73%, rgba(65, 65, 65, 0.02) 73%, rgba(65, 65, 65, 0.02) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
-  font-family: 'El Messiri', narrow;
+  /* font-family: 'El Messiri', narrow; */
   justify-content: center
 }
 .judulutama {
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .desainkiri {
  
   max-width: 500px;
   height: auto;
-  margin-right: 100px;
-  margin-bottom: 10px;
+  margin: 10px;
   max-width: 400px;
   max-height: 400px;
 }
 
 .judul {
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
 }
 
 body{
@@ -42,8 +42,9 @@ flex-direction: column;
 }
 
 .columns{
-display: flex;
-flex:1;
+  display: flex;
+  flex:1;
+  margin-bottom: 50px;
 }
 .sidebar-first{
 width: 33%;
@@ -62,19 +63,20 @@ padding : 20px;
 order: 3;
 }
 
-
 .tombol {
   background-color: white;
   border-radius: 20px;
-  padding: 30px 30px;
+  padding: 15px;
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
   display: inline-block;
   transition-duration: 0.4s;
-  width: 100%;
+  width: 50%;
 }
 .tombol:hover {
-  background-color: rgb(89, 42, 165);
+  background-color: rgb(0, 88, 171);
+  color: white;
+  cursor: pointer;
 }
 
 .dropbtn {
@@ -90,7 +92,6 @@ order: 3;
 }
 
 .dropdown {
-
   display: block;
   margin-left: 50px;
   margin-right: 70px;
@@ -102,7 +103,6 @@ order: 3;
   box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.2);
   margin-right: 50px;
   margin-left: 50px;
-
 }
 
 .dropdown-content a {
@@ -112,7 +112,6 @@ order: 3;
   text-align: center;
   display: inline-block;
   position: relative;
-
 }
 
 .dropdown-content a:hover {
@@ -129,13 +128,14 @@ order: 3;
 
 .text {
   width: 500px;
+  font-size: 19px;
   text-align: center;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-margin: 0; /* Could be anything you like. */
-display: -webkit-box;
--webkit-line-clamp: 5; /* number of lines to show */
-       line-clamp: 5; 
--webkit-box-orient: vertical;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0; /* Could be anything you like. */
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5; 
+  -webkit-box-orient: vertical;
 }
