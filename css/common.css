@@ -5,7 +5,6 @@ body {
 .capitalize {
   text-transform: capitalize;
 }
-
    
 main {
   background-color: white;
@@ -141,7 +140,6 @@ display: -webkit-box;
        line-clamp: 5; 
 -webkit-box-orient: vertical;
 }
-
 .invisible {
   visibility: hidden;
 }
