@@ -172,9 +172,9 @@
       const newElement = orderItemTemplate.cloneNode(true);
       const furnitureElement = newElement.querySelector('#tmp-furniture');
       const itemImageElement = newElement.querySelector('#tmp-item-image');
+      const lengthElement = newElement.querySelector('#tmp-length');
       const widthElement = newElement.querySelector('#tmp-width');
       const heightElement = newElement.querySelector('#tmp-height');
-      const lengthElement = newElement.querySelector('#tmp-length');
       const materialElement = newElement.querySelector('#tmp-material');
       const colorElement = newElement.querySelector('#tmp-color');
       const quantityElement = newElement.querySelector('#tmp-quantity');
@@ -184,17 +184,18 @@
       newElement.setAttribute('id', `order-${index}`);
       furnitureElement.innerHTML = `${order.type} ${order.model}`;
       itemImageElement.src = `assets/${order.type}-${order.model}.jpg`;
+      lengthElement.innerHTML = order.length;
       widthElement.innerHTML = order.width;
       heightElement.innerHTML = order.height;
-      lengthElement.innerHTML = order.length;
       materialElement.src = `assets/material-${order.material}.jpg`;
       colorElement.style.backgroundColor = order.color;
       quantityElement.innerHTML = order.quantity;
       priceElement.innerHTML = formatPrice(order.price);
       deleteElement.onclick = () => initiateOrderDeletion(index);
 
-      widthElement.removeAttribute('id');
       lengthElement.removeAttribute('id');
+      widthElement.removeAttribute('id');
+      heightElement.removeAttribute('id');
       materialElement.removeAttribute('id');
       colorElement.removeAttribute('id');
       quantityElement.removeAttribute('id');

@@ -7,6 +7,7 @@ function proceedOrder() {
   orders.unshift({
     type,
     model,
+    length: getNumberInput('panjang'),
     width: getNumberInput('lebar'),
     height: getNumberInput('tinggi'),
     material: getChosenMaterial(),
