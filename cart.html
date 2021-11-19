@@ -4,15 +4,13 @@
 <head>
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/popup-hapus-order.css">
-  <script src="https://kit.fontawesome.com/296c028d74.js" crossorigin="anonymous"></script>
-  <link
-      href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Tangerine&display=swap"
-      rel="stylesheet"
-    />
+  
   <style>
     nav {
       max-width: 600px;
       margin: 30px auto;
+      font-family:'Source Sans Pro', sans-serif;;
+     
     }
 
     nav>a {
@@ -29,6 +27,16 @@
 
     nav>a>* {
       margin-right: 10px;
+    }
+    #orders-list > div {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .order-item {
+      display: inline-block;
+      
     }
 
     main {
@@ -85,18 +93,22 @@
       width: 100px;
       height: 100px;
       box-shadow: 5px 5px 5px #727272
+      
     }
 
     .item-body {
       display: flex;
+      
     }
 
     .column-2 {
-      margin-left: 30px;
+      margin-left: 20px;
+      margin-top: 50px;
     }
 
-    .column-2>div:nth-child(2) {
-      margin: 25px 0;
+    .column-2 > div:nth-child(2) {
+      margin: 15px 0;
+      
     }
 
     .row-1 {
