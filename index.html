@@ -30,7 +30,9 @@
     </div>
     <div id="after-login" class="hidden">
       <h4>Selamat datang aa!</h4>
-      <p>(dengan email: aaa)</p><br><br>
+      <p>(dengan email: aaa)</p>
+      <span id="logout" onclick="logout()">logout</span>
+      <br><br>
       <div class="center">
         <h1>Silahkan pilih furnitur macam apa yang ingin anda pesan</h1>
         <img src="./assets/kursi-asik.jpg" class="pilihfurnitur">
@@ -41,7 +43,19 @@
         <a href="./furniture.html?type=kasur"><button type="submit" class="geserkanan100" id="pilihkasur">Kasur</button></a>
       </div>
     </div>
-    <script src="js/index.js">
+    <script src="js/index.js"></script>
+    <script>
+      handleLoginSession();
+
+      function handleLoginSession() {
+        if (isLoggedIn()) {
+          handleLoggedInDisplay();
+        }
+      }
+
+      function isLoggedIn() {
+        return window.localStorage.getItem('login.name') ? true : false;
+      }
     </script>
   </body>
 </html>

@@ -36,10 +36,6 @@ body {
   cursor: pointer;
 }
 
-#after-login.hidden {
-  display: none;
-}
-
 .logo {
   width: 80px;
   height: 40px;
@@ -101,4 +97,14 @@ p {
   margin-top: 0px;
   margin-bottom: 25px;
   font-size: 20px
+}
+
+#logout {
+  color: grey;
+}
+
+#logout:hover {
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
 }

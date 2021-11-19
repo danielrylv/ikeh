@@ -5,3 +5,11 @@ body {
 .capitalize {
   text-transform: capitalize;
 }
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
