@@ -152,23 +152,23 @@
       const priceElement = newElement.querySelector('#tmp-price');
       const deleteElement = newElement.querySelector('#tmp-delete');
 
-      newElement.id = `order-${index}`;
+      newElement.setAttribute('id', `order-${index}`);
       widthElement.innerHTML = order.width;
       heightElement.innerHTML = order.height;
       lengthElement.innerHTML = order.length;
       materialElement.src = `assets/material-${order.material}.jpg`;
-      colorElement.style = { 'background-color': order.color };
+      colorElement.style.backgroundColor = order.color;
       quantityElement.innerHTML = order.quantity;
       priceElement.innerHTML = formatPrice(order.price);
       deleteElement.onclick = () => initiateOrderDeletion(index);
 
-      delete widthElement.id;
-      delete lengthElement.id;
-      delete materialElement.id;
-      delete colorElement.id;
-      delete quantityElement.id;
-      delete priceElement.id;
-      delete deleteElement.id;
+      widthElement.removeAttribute('id');
+      lengthElement.removeAttribute('id');
+      materialElement.removeAttribute('id');
+      colorElement.removeAttribute('id');
+      quantityElement.removeAttribute('id');
+      priceElement.removeAttribute('id');
+      deleteElement.removeAttribute('id');
 
       return newElement;
     }
