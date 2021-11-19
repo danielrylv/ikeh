@@ -5,7 +5,7 @@ checkLoginForm.addEventListener('submit', function(event) {
   event.preventDefault()
   const nama = document.querySelector('#nama')
   const email = document.querySelector('#email')
-  const center = document.querySelector('.center')
+  const banner = document.querySelector('.banner')
   const testing = document.querySelector('.logincontain')
   const button = document.querySelector('#checkAnswer')
   const warning = document.createElement('h6')
@@ -25,14 +25,14 @@ checkLoginForm.addEventListener('submit', function(event) {
     let emailuser = email.value
 
     if (sudahlogintadi === false) {
-      center.removeChild(document.querySelector('#mohonlogin'))
-      center.removeChild(document.querySelector('#slogan'))
+      banner.removeChild(document.querySelector('#mohonlogin'))
 
       button.innerHTML = "Ubah Nama dan Email"
 
       const afterLoginDiv = document.getElementById('after-login');
 
       afterLoginDiv.classList.remove('hidden');
+      afterLoginDiv.getElementsByTagName("H4")[0].innerHTML = `Selamat datang ${namauser}!`
       afterLoginDiv.getElementsByTagName('p')[0].innerHTML = `(dengan email: ${emailuser})`;
 
       sudahlogintadi = true

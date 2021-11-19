@@ -12,10 +12,11 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="center">
-      <h2>Selamat Datang di Toko Furnitur Custom Made</h2>
+    <div class="banner">
       <img src="./assets/2560px.png" alt="logo ikeh" class= "logo">
-      <p id="slogan">Kamu Order, Kita Anterr~<p>
+      <img src="./assets/banner1.jpg" alt="logo ikeh" class= "bannerimg">
+      <h2>Custom Furnitures For Your</h2>
+      <h2>Better Personal Life</h2>
       <h3 id="mohonlogin">Untuk memulai pemesanan mohon isi data berikut</h3><br>
       <div class="logincontain">
         <form id="checkLogin">
@@ -23,16 +24,20 @@
           <input type="text" id="nama" placeholder="Abi"><br>
           <label for="email">Alamat email anda:</label>
           <input type="text" id="email" placeholder="ganteng@ikeh.com"><br><br>
-          <button type="submit" class="half-width" id="checkAnswer">Selanjutnya</button>
+          <button type="submit" class="half-width" id="checkAnswer">Selanjutnya</button><br><br>
         </form>
-      </div>
-      <div id="after-login" class="hidden">
-        <h4>Selamat datang aa!</h4>
-        <p>(dengan email: aaa)</p>
-        <h2>Silahkan pilih furnitur macam apa yang ingin anda pesan</h2>
-        <a href="./furniture.html?type=kursi"><img src="./assets/kursi-1.jpg" class="pilihfurnitur"></a>
-        <a href="./furniture.html?type=meja"><img src="./assets/meja-1.jpg" class="pilihfurnitur"></a>
-        <a href="./furniture.html?type=kasur"><img src="./assets/kasur-1.jpg" class="pilihfurnitur"></a>
+    </div>
+    <div id="after-login" class="hidden">
+      <h4>Selamat datang aa!</h4>
+      <p>(dengan email: aaa)</p><br><br>
+      <div class="center">
+        <h1>Silahkan pilih furnitur macam apa yang ingin anda pesan</h1>
+        <img src="./assets/kursi-asik.jpg" class="pilihfurnitur">
+        <a href="./furniture.html?type=kursi"><button type="submit" class="geserkanan100" id="checkAnswer">Kursi</button></a>
+        <img src="./assets/meja-asik.jpg" class="pilihfurnitur">
+        <a href="./furniture.html?type=meja"><button type="submit" class="geserkanan100" id="checkAnswer">Meja</button></a>
+        <img src="./assets/kasur-asik.jpg" class="pilihfurnitur">
+        <a href="./furniture.html?type=kasur"><button type="submit" class="geserkanan100" id="checkAnswer">Kasur</button></a>
       </div>
     </div>
     <script src="js/index.js">
