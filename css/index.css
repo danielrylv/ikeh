@@ -71,8 +71,8 @@ body {
 }
 
 button {
-  border-radius: 25px;
-  padding: 15px;
+  border-radius: 10px;
+  padding: 10px;
   background-color: #1d6fcc;
   outline: none;
   color: #ebf4ff;
