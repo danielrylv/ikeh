@@ -42,8 +42,10 @@ function handleLoggedInDisplay() {
 
   const afterLoginDiv = document.getElementById('after-login');
   const loginInfo = getLoginInfo();
+  const cart = document.querySelector('#aatas');
 
   afterLoginDiv.classList.remove('hidden');
+  cart.classList.remove('hidden');
   afterLoginDiv.getElementsByTagName("H4")[0].innerHTML = `Selamat datang ${loginInfo.name}!`;
   afterLoginDiv.getElementsByTagName('p')[0].innerHTML = `(dengan email: ${loginInfo.email})`;
 }
