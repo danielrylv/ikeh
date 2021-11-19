@@ -53,9 +53,9 @@ function formatPrice(num) {
 }
 
 function calculatePrice() {
-  const BASE_PRICE = 1_000_000;
+  const BASE_PRICE = 1_000;
 
-  return getNumberInput('quantity') * BASE_PRICE;
+  return getNumberInput('quantity') * (getNumberInput('panjang')/10) * (getNumberInput('lebar')/10) * (getNumberInput('tinggi')/10) * BASE_PRICE;
 }
 
 function clearOrders() {
