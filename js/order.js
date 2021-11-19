@@ -57,3 +57,7 @@ function calculatePrice() {
 
   return getNumberInput('quantity') * (getNumberInput('panjang')/10) * (getNumberInput('lebar')/10) * (getNumberInput('tinggi')/10) * BASE_PRICE;
 }
+
+function clearOrders() {
+  window.localStorage.removeItem('orders');
+}

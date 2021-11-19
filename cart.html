@@ -155,6 +155,108 @@
       margin-bottom: 10px;
     }
 
+    #checkout-container {
+      width: 100%;
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid lightgrey;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #checkout-info {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1em;
+    }
+
+    #checkout-info > span {
+      padding: 0 20px;
+    }
+
+    #checkout-price {
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+
+    #checkout-button {
+      width: 300px;
+      padding: 12px 12px;
+      background-color: #0d6efd;
+      border: 1px solid #0d6efd;
+      border-radius: 7px;
+      color: white;
+      text-align: center;
+      transition: background-color .15s ease-in-out;
+      flex: 1 0 auto;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .popup-wrapper {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-wrapper.hidden {
+      display: none;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      opacity: 0.6;
+      position: absolute;
+      z-index: 4;
+    }
+
+    .popup-box {
+      width: 300px;
+      background-color: white;
+      border-radius: 15px;
+      position: relative;
+      z-index: 5;
+      font-size: 1.1em;
+    }
+
+    .popup-text {
+      width: 100%;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .popup-button-wrapper {
+      width: 100%;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .popup-button-wrapper > button {
+      padding: 10px 20px;
+      background-color: darkturquoise;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .popup-button-wrapper > button:hover {
+      background-color: #00babd;
+    }
+
+    #checkout-after-confirmation img {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
@@ -162,76 +264,105 @@
   <div class="banner">
     <img src="./assets/2560px.png" alt="logo ikeh" class="logo">
   </div>
-    <nav>
-      <a href="index.html">
-        <i class="fas fa-arrow-left"></i>
-        <span>halaman utama</span>
-      </a>
-    </nav>
-    <main>
-      <div id="orders-list">
-        <div id="tmp-order" class="order-item">
-          <div class="order-header">
-            <h2 id="tmp-furniture" class="capitalize">Kursi Duar</h2>
-            <button id="tmp-delete" onclick="initiateOrderDeletion(-1)">Hapus</button>
-          </div>
-          <div class="item-body">
-            <div>
-              <img id="tmp-item-image" class="furniture" src="assets/kursi-duar.jpg">
-            </div>
-            <div class="column-2">
-              <div class="row-1">
-                <div>
-                  <div>Panjang</div>
-                  <div id="tmp-width">100</div>
-                </div>
-                <div>
-                  <div>Lebar</div>
-                  <div id="tmp-length">75</div>
-                </div>
-                <div>
-                  <div>Tinggi</div>
-                  <div id="tmp-height">55</div>
-                </div>
-              </div>
-              <div class="row-2">
-                <div><img id="tmp-material" class="material" src="assets/material-jati.jpg"></div>
-                <div id="tmp-color" class="color-box" style="background-color: lawngreen"></div>
-              </div>
-              <div class="row-3">
-                <div>Jumlah: <span id="tmp-quantity">11</span></div>
-                <div id="tmp-price">Harga: Rp2.000.000</div>
-              </div>
-            </div>
-          </div>
+  <nav>
+    <a href="index.html">
+      <i class="fas fa-arrow-left"></i>
+      <span>halaman utama</span>
+    </a>
+  </nav>
+  <main>
+    <div id="orders-list">
+      <div id="tmp-order" class="order-item">
+        <div class="order-header">
+          <h2 id="tmp-furniture" class="capitalize">Kursi Duar</h2>
+          <button id="tmp-delete" onclick="initiateOrderDeletion(-1)">Hapus</button>
         </div>
-      </div>
-    </main>
-    <div id="order-popup" class="popup-wrapper hide">
-      <div class="overlay"></div>
-      <div class="popup-box">
-        <div class="popup-text">Are you sure deleting this order?</div>
-        <div class="popup-button-wrapper">
-          <button onclick="handleDeletePopupClick()">Yes, please!</button>
+        <div class="item-body">
+          <div>
+            <img id="tmp-item-image" class="furniture" src="assets/kursi-duar.jpg">
+          </div>
+          <div class="column-2">
+            <div class="row-1">
+              <div>
+                <div>Panjang</div>
+                <div id="tmp-width">100</div>
+              </div>
+              <div>
+                <div>Lebar</div>
+                <div id="tmp-length">75</div>
+              </div>
+              <div>
+                <div>Tinggi</div>
+                <div id="tmp-height">55</div>
+              </div>
+            </div>
+            <div class="row-2">
+              <div><img id="tmp-material" class="material" src="assets/material-jati.jpg"></div>
+              <div id="tmp-color" class="color-box" style="background-color: lawngreen"></div>
+            </div>
+            <div class="row-3">
+              <div>Jumlah: <span id="tmp-quantity">11</span></div>
+              <div id="tmp-price">Harga: Rp2.000.000</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <script src="js/order.js"></script>
-    <script>
-      let deleteOrderIndex = -1;
+    <div id="checkout-container">
+      <div id="checkout-info">
+        <span>Total Belanja</span>
+        <span id="checkout-price">Rp50.000.000</span>
+      </div>
+      <div>
+        <button id="checkout-button" onclick="initiateCheckout()">CHECKOUT</button>
+      </div>
+    </div>
+  </main>
+  <div id="order-popup" class="popup-wrapper hidden">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div class="popup-text">Are you sure deleting this order?</div>
+      <div class="popup-button-wrapper">
+        <button onclick="handleDeletePopupClick()">Yes, please!</button>
+      </div>
+    </div>
+  </div>
+  <div id="checkout-popup" class="popup-wrapper hidden">
+    <div class="overlay"></div>
+    <div class="popup-box">
+      <div id="checkout-before-confirmation">
+        <div class="popup-text">Are you sure to checkout now?</div>
+        <div class="popup-button-wrapper">
+          <button onclick="handleCheckoutClick()">Go go go!</button>
+        </div>
+      </div>
+      <div id="checkout-after-confirmation" class="popup-text hidden">
+        <div>
+          <span>Thank you for purchase!</span>
+          <i class="fas fa-check" style="font-weight: bold; color: green"></i>
+        </div>
+        <div>
+          <img src="assets/loading.gif">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/order.js"></script>
+  <script>
+    let deleteOrderIndex = -1;
 
-      function initiateOrderDeletion(index) {
-        document.getElementById('order-popup').classList.remove('hide');
-        deleteOrderIndex = index;
-      }
+    function initiateOrderDeletion(index) {
+      document.getElementById('order-popup').classList.remove('hidden');
+      deleteOrderIndex = index;
+    }
 
-      function handleDeletePopupClick() {
-        document.getElementById('order-popup').classList.add('hide');
-        deleteOrder(deleteOrderIndex);
-      }
-    </script>
-    <script>
-      let orderItemTemplate = null;
+    function handleDeletePopupClick() {
+      document.getElementById('order-popup').classList.add('hidden');
+      deleteOrder(deleteOrderIndex);
+    }
+  </script>
+  <script>
+    let orderItemTemplate = null;
 
       initiateOrderItemFactory();
 
@@ -239,48 +370,48 @@
         orderItemTemplate = document.getElementById('tmp-order');
       }
 
-      function createOrderItemElement(index, order) {
-        const newElement = orderItemTemplate.cloneNode(true);
-        const furnitureElement = newElement.querySelector('#tmp-furniture');
-        const itemImageElement = newElement.querySelector('#tmp-item-image');
-        const lengthElement = newElement.querySelector('#tmp-length');
-        const widthElement = newElement.querySelector('#tmp-width');
-        const heightElement = newElement.querySelector('#tmp-height');
-        const materialElement = newElement.querySelector('#tmp-material');
-        const colorElement = newElement.querySelector('#tmp-color');
-        const quantityElement = newElement.querySelector('#tmp-quantity');
-        const priceElement = newElement.querySelector('#tmp-price');
-        const deleteElement = newElement.querySelector('#tmp-delete');
+    function createOrderItemElement(index, order) {
+      const newElement = orderItemTemplate.cloneNode(true);
+      const furnitureElement = newElement.querySelector('#tmp-furniture');
+      const itemImageElement = newElement.querySelector('#tmp-item-image');
+      const lengthElement = newElement.querySelector('#tmp-length');
+      const widthElement = newElement.querySelector('#tmp-width');
+      const heightElement = newElement.querySelector('#tmp-height');
+      const materialElement = newElement.querySelector('#tmp-material');
+      const colorElement = newElement.querySelector('#tmp-color');
+      const quantityElement = newElement.querySelector('#tmp-quantity');
+      const priceElement = newElement.querySelector('#tmp-price');
+      const deleteElement = newElement.querySelector('#tmp-delete');
 
-        newElement.setAttribute('id', `order-${index}`);
-        furnitureElement.innerHTML = `${order.type} ${order.model}`;
-        itemImageElement.src = `assets/${order.type}-${order.model}.jpg`;
-        lengthElement.innerHTML = order.length;
-        widthElement.innerHTML = order.width;
-        heightElement.innerHTML = order.height;
-        materialElement.src = `assets/material-${order.material}.jpg`;
-        colorElement.style.backgroundColor = order.color;
-        quantityElement.innerHTML = order.quantity;
-        priceElement.innerHTML = formatPrice(order.price);
-        deleteElement.onclick = () => initiateOrderDeletion(index);
+      newElement.setAttribute('id', `order-${index}`);
+      furnitureElement.innerHTML = `${order.type} ${order.model}`;
+      itemImageElement.src = `assets/${order.type}-${order.model}.jpg`;
+      lengthElement.innerHTML = order.length;
+      widthElement.innerHTML = order.width;
+      heightElement.innerHTML = order.height;
+      materialElement.src = `assets/material-${order.material}.jpg`;
+      colorElement.style.backgroundColor = order.color;
+      quantityElement.innerHTML = order.quantity;
+      priceElement.innerHTML = formatPrice(order.price);
+      deleteElement.onclick = () => initiateOrderDeletion(index);
 
-        lengthElement.removeAttribute('id');
-        widthElement.removeAttribute('id');
-        heightElement.removeAttribute('id');
-        materialElement.removeAttribute('id');
-        colorElement.removeAttribute('id');
-        quantityElement.removeAttribute('id');
-        priceElement.removeAttribute('id');
-        deleteElement.removeAttribute('id');
+      lengthElement.removeAttribute('id');
+      widthElement.removeAttribute('id');
+      heightElement.removeAttribute('id');
+      materialElement.removeAttribute('id');
+      colorElement.removeAttribute('id');
+      quantityElement.removeAttribute('id');
+      priceElement.removeAttribute('id');
+      deleteElement.removeAttribute('id');
 
-        return newElement;
-      }
-    </script>
-    <script>
-      renderOrderList();
+      return newElement;
+    }
+  </script>
+  <script>
+    renderOrders();
 
-      function renderOrderList() {
-        const orders = getCurrentOrders();
+    function renderOrders() {
+      const orders = getCurrentOrders();
 
         if (orders.length == 0) {
           return;
@@ -292,27 +423,51 @@
         for (let i = 0; i < orders.length; i++) {
           container.appendChild(createOrderItemElement(i, orders[i]));
         }
+
+      let totalPrice = 0;
+
+      for (let order of orders) {
+        totalPrice += order.price;
       }
 
-      function deleteOrder(index) {
-        let orders = getCurrentOrders();
+      document.getElementById('checkout-price').innerHTML = formatPrice(totalPrice);
+    }
 
-        if (orders.length == 0) {
-          return;
-        }
+    function deleteOrder(index) {
+      let orders = getCurrentOrders();
 
-        let newOrders = [];
-
-        for (let i = 0; i < orders.length; i++) {
-          if (i != index) {
-            newOrders.push(orders[i]);
-          }
-        }
-
-        saveOrders(newOrders);
-        renderOrderList();
+      if (orders.length == 0) {
+        return;
       }
-    </script>
+
+      let newOrders = [];
+
+      for (let i = 0; i < orders.length; i++) {
+        if (i != index) {
+          newOrders.push(orders[i]);
+        }
+      }
+
+      saveOrders(newOrders);
+      renderOrders();
+    }
+  </script>
+  <script>
+    function initiateCheckout() {
+      document.getElementById('checkout-popup').classList.remove('hidden');
+    }
+
+    function handleCheckoutClick() {
+      clearOrders();
+
+      document.getElementById('checkout-before-confirmation').classList.add('hidden');
+      document.getElementById('checkout-after-confirmation').classList.remove('hidden');
+
+      setInterval(function() {
+        location.href = 'index.html';
+      }, 2000);
+    }
+  </script>
 </body>
 
 </html>
